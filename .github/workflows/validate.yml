@@ -52,6 +52,9 @@ jobs:
               print('✅ No duplicate handles')
           "
 
+      - name: Validate HTML structure
+        run: python3 scripts/validate_html.py
+
       - name: Scan for sensitive data
         run: |
           echo "Scanning for sensitive data patterns..."
