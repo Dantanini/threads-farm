@@ -135,97 +135,20 @@
   </div>
 
 <script>
-const farmers = [
-  // 宜蘭
-  {handle:"@228sandy",name:"",product:"白米",region:"宜蘭",price:"",buy:"",cert:""},
-  {handle:"@2wsx36951",name:"",product:"有機地瓜",region:"宜蘭",price:"",buy:"",cert:"有機"},
-  {handle:"@to_get_her2018",name:"",product:"櫛瓜、大蔥",region:"宜蘭",price:"",buy:"",cert:""},
-  // 新竹
-  {handle:"@guobafarm",name:"",product:"桃子、柿子（尖石後山）",region:"新竹",price:"",buy:"",cert:""},
-  // 桃園
-  {handle:"@kiki__vanilla",name:"",product:"有機櫛瓜、有機羽衣甘藍、彩色花椰菜（大溪）",region:"桃園",price:"",buy:"私訊",cert:"有機"},
-  // 嘉義
-  {handle:"@zhong.sen_",name:"",product:"花生",region:"嘉義",price:"",buy:"",cert:""},
-  {handle:"@krista0427",name:"",product:"小辣椒",region:"嘉義",price:"",buy:"",cert:""},
-  {handle:"@lushun_asparagus",name:"",product:"綠蘆筍",region:"嘉義",price:"",buy:"私訊表單",cert:""},
-  {handle:"@lwsocialenterprise",name:"",product:"綠蘆筍",region:"嘉義",price:"",buy:"",cert:""},
-  {handle:"@enen3154",name:"",product:"洋蔥",region:"嘉義",price:"7斤$320 / 16斤$590 / 30斤$1000（含運）",buy:"私訊",cert:"農藥未檢出",min:"7斤起"},
-  {handle:"@mengtianfarm",name:"",product:"水果小黃瓜",region:"嘉義",price:"",buy:"私訊",cert:""},
-  {handle:"@guoran_daily",name:"果然日常",product:"紅肉甜橙、帝王柑、芭樂、檸檬",region:"嘉義",price:"",buy:"",cert:""},
-  // 苗栗
-  {handle:"@mountain_chicken888",name:"",product:"放山雞",region:"苗栗",price:"",buy:"",cert:""},
-  {handle:"@passonthetreasure",name:"",product:"絲瓜筍",region:"苗栗",price:"",buy:"",cert:""},
-  {handle:"@koo060060",name:"",product:"香菇",region:"苗栗",price:"",buy:"",cert:""},
-  {handle:"@chih__sheng",name:"",product:"地瓜",region:"苗栗",price:"",buy:"",cert:""},
-  {handle:"@yt_1203",name:"",product:"番茄（卓蘭）",region:"苗栗",price:"",buy:"",cert:""},
-  // 台中
-  {handle:"@alice60577",name:"",product:"玉米筍",region:"台中",price:"",buy:"",cert:""},
-  {handle:"@kevin7892001",name:"",product:"韓國櫛瓜",region:"台中",price:"",buy:"",cert:""},
-  {handle:"@m948avia",name:"",product:"韓國櫛瓜",region:"台中",price:"",buy:"",cert:""},
-  {handle:"@mumu_farmer",name:"",product:"大安芋頭",region:"台中",price:"",buy:"",cert:""},
-  // 彰化
-  {handle:"@samhighhung",name:"",product:"高麗菜",region:"彰化",price:"",buy:"",cert:""},
-  {handle:"@vegetable0722",name:"",product:"黑柿番茄",region:"彰化",price:"",buy:"",cert:""},
-  {handle:"@duffy_kittybaby",name:"",product:"牛番茄",region:"彰化",price:"",buy:"",cert:""},
-  {handle:"@abcd._.5410",name:"裕農農場",product:"蔬菜、牛番茄",region:"彰化",price:"7斤$280（原$320）",buy:"賣貨便",cert:""},
-  {handle:"@autumns0210",name:"",product:"小黃瓜",region:"彰化",price:"",buy:"",cert:""},
-  {handle:"@dongtians",name:"",product:"巨峰葡萄（溪湖，產期3-5月）",region:"彰化",price:"4斤$400 + 黑貓運費$190",buy:"私訊",cert:"",min:"4斤起"},
-  {handle:"@frankchiang0107",name:"",product:"綠花椰菜",region:"彰化",price:"",buy:"LINE: 0908277511",cert:""},
-  // 台南
-  {handle:"@sufu__life",name:"",product:"竹筍（麻竹筍、綠竹筍、涼筍真空包）",region:"台南",price:"",buy:"",cert:""},
-  {handle:"@_blueberrysweet__",name:"",product:"藍莓、覆盆子",region:"台南",price:"",buy:"",cert:""},
-  // 南投
-  {handle:"@l.__yuuy",name:"",product:"柳丁",region:"南投",price:"",buy:"",cert:""},
-  {handle:"@_fy.tiang_",name:"",product:"柳丁",region:"南投",price:"",buy:"",cert:""},
-  {handle:"@lettuce_cooperative",name:"上山採田",product:"履歷生菜",region:"南投",price:"",buy:"",cert:"產銷履歷"},
-  {handle:"@18ranch",name:"",product:"履歷雞蛋",region:"南投",price:"",buy:"",cert:"產銷履歷"},
-  {handle:"@minghuang_",name:"",product:"山藥",region:"南投",price:"",buy:"",cert:""},
-  {handle:"@unaxx87",name:"",product:"櫛瓜（鹿谷小半天）",region:"南投",price:"",buy:"",cert:""},
-  {handle:"@ngdealhouse",name:"",product:"櫛瓜（信義）",region:"南投",price:"",buy:"",cert:""},
-  {handle:"@wei__24690",name:"",product:"櫛瓜（鹿谷）",region:"南投",price:"A級5斤$350/10斤$600, B級5斤$250/10斤$400（含運）",buy:"IG 私訊",cert:"",min:"5斤起"},
-  {handle:"@milk398",name:"三畝田農場",product:"櫛瓜（仁愛鄉）",region:"南投",price:"10kg $500 + 運費 $170",buy:"Google 表單",cert:"產銷履歷、溫室無農藥",min:"10kg起"},
-  {handle:"@jl___013",name:"",product:"櫛瓜（鹿谷）",region:"南投",price:"1斤$50 / 一箱12斤$600免運",buy:"私訊",cert:"",min:"4斤起"},
-  // 屏東
-  {handle:"@unishow_farm",name:"",product:"雨來菇",region:"屏東",price:"",buy:"",cert:""},
-  {handle:"@gherkin_1216",name:"",product:"溫室花胡瓜（小黃瓜）",region:"屏東",price:"A級10kg $850+運$120 / B級10kg $600+運$120",buy:"私訊",cert:"自主送驗、採收無用藥",min:"10kg起"},
-  {handle:"@suyuqisu",name:"",product:"小黃瓜",region:"屏東",price:"",buy:"",cert:""},
-  {handle:"@mumu_seasonslemon",name:"",product:"四季檸檬",region:"屏東",price:"",buy:"",cert:""},
-  {handle:"@smileniuniu",name:"",product:"蓮霧（南州）",region:"屏東",price:"",buy:"私訊",cert:""},
-  {handle:"@skyebayclub",name:"",product:"番茄、芭樂",region:"屏東",price:"",buy:"",cert:""},
-  // 台東
-  {handle:"@whale__diary2024",name:"海泱日記",product:"大目釋迦",region:"台東",price:"10-11斤 $1000（含運）",buy:"官方 LINE",cert:"",min:"1箱(10-11斤)起"},
-  // 雲林
-  {handle:"@open761226",name:"",product:"",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@bb0916g",name:"",product:"葉菜類",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@liaojuntang9",name:"",product:"格蘭芽",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@willyfarm2023",name:"",product:"栗子南瓜",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@sister_water_",name:"",product:"有機花生芽",region:"雲林",price:"",buy:"",cert:"有機"},
-  {handle:"@chain_227",name:"",product:"地瓜",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@z081972",name:"",product:"地瓜",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@sophie19880308",name:"",product:"白花椰",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@hungju_life",name:"",product:"小黃瓜",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@811215dream",name:"",product:"小黃瓜",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@luck90562",name:"",product:"蒜頭、玉米筍",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@wenli__1128",name:"",product:"蒜頭、玉米筍",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@paige.0621",name:"",product:"香米",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@garlic77.tw",name:"",product:"蒜頭、地瓜、紅蔥頭、花生",region:"雲林",price:"蒜頭60元/斤 / 地瓜10斤$290 / 紅蔥頭10斤$600",buy:"賣貨便/私訊",cert:""},
-  {handle:"@wsf.0121",name:"",product:"沙地黑葉蒜頭（崙背）",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@thegoodthing_tw",name:"",product:"花生（花生糖、花生醬等，60年老店）",region:"雲林",price:"",buy:"",cert:""},
-  {handle:"@_ref.hn",name:"虹蝸牛果園",product:"砂糖橘、美人柑、帝王柑、茂谷、柳丁",region:"雲林",price:"",buy:"",cert:""},
-  // 未標示地區
-  {handle:"@xushengfu",name:"一日一甘",product:"油甘鮮果粉",region:"",price:"單入$450 / 六入$2250",buy:"everydayamla.com.tw",cert:"SGS 410項農藥零檢出、自然農法"},
-  {handle:"@pro_bro_avocado",name:"波波酪梨",product:"酪梨",region:"",price:"待產季",buy:"",cert:""},
-  {handle:"@hugarlic",name:"",product:"蒜頭",region:"",price:"",buy:"",cert:""},
-  {handle:"@tenyi_soysause1960",name:"",product:"手工醬油",region:"",price:"",buy:"",cert:""},
-  {handle:"@peak_view2025",name:"",product:"香菇",region:"",price:"",buy:"",cert:"無農藥"},
-  {handle:"@helen7533967",name:"",product:"娃娃菜",region:"",price:"",buy:"",cert:""},
-  {handle:"@0amber123",name:"",product:"葉菜（白菜、油菜、青江、菠菜等）",region:"",price:"",buy:"",cert:""},
-  {handle:"@_berryhills",name:"",product:"草莓",region:"",price:"",buy:"",cert:""},
-  {handle:"@chuchutwotwo",name:"",product:"玉荷苞荔枝",region:"",price:"",buy:"",cert:""},
-  {handle:"@jcfruit.tw",name:"",product:"黃檸檬（5月後產季）",region:"",price:"",buy:"",cert:""},
-];
-
+let farmers = [];
 let activeRegion = '';
+
+async function loadData() {
+  try {
+    const res = await fetch('data/farmers.json');
+    farmers = await res.json();
+  } catch (e) {
+    console.error('Failed to load farmer data:', e);
+    farmers = [];
+  }
+  initFilters();
+  render();
+}
 
 function getRegions() {
   const regions = [...new Set(farmers.map(f => f.region).filter(r => r))];
@@ -234,6 +157,7 @@ function getRegions() {
 
 function initFilters() {
   const container = document.getElementById('region-filters');
+  container.innerHTML = '';
   const all = document.createElement('button');
   all.className = 'filter-btn active';
   all.textContent = '全部';
@@ -328,8 +252,7 @@ function switchReportTab(tab) {
   document.getElementById('section-report').classList.toggle('active', tab === 'report');
 }
 
-initFilters();
-render();
+loadData();
 </script>
 </body>
 </html>
