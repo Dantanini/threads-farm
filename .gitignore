@@ -1,0 +1,25 @@
+# 環境變數與密鑰
+.env
+.env.*
+*.key
+*.pem
+
+# 本地設定
+.claude/settings.local.json
+config.local.*
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Node
+node_modules/
+
+# 暫存
+*.tmp
+*.log
