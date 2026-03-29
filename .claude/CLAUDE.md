@@ -42,6 +42,11 @@
 - 不可包含個人暱稱、私人稱呼
 - 只寫技術理由和產品理由
 
+## 資料驗證（verified 欄位）
+- farmers.json 每筆可加 "verified": "YYYY-MM-DD"
+- 有 verified 日期的，CI 驗證時跳過
+- 修改已存在小農的資料欄位時，必須清除該筆的 verified
+
 ## 不可上傳的內容
 - `.env` 或任何環境變數檔
 - API token / bot token / secret key

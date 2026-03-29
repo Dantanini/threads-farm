@@ -97,6 +97,10 @@ def main():
     for farmer in farmers:
         if farmer['handle'] not in changed:
             continue
+        # Skip verified entries that haven't been modified in data fields
+        if farmer.get('verified'):
+            print(f'⏭️ {farmer["handle"]}: verified on {farmer["verified"]}, skipping')
+            continue
         if not farmer.get('product'):
             print(f'⏭️ {farmer["handle"]}: no product listed, skipping')
             continue
