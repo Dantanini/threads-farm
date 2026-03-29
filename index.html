@@ -103,7 +103,7 @@
 
   <div class="navbar">
     <button class="nav-btn active" onclick="switchPage('search')">找菜</button>
-    <button class="nav-btn" onclick="switchPage('report')">小農回報 / 檢舉</button>
+    <button class="nav-btn" onclick="switchPage('report'); trackEvent('report_tab_click')">小農回報 / 檢舉</button>
   </div>
 
   <div class="page active" id="page-search">
@@ -135,12 +135,12 @@
 
       <div class="form-section active" id="section-farmer" style="text-align:center; padding: 2rem 0;">
         <p style="margin-bottom:1rem; color:#555;">點擊下方按鈕填寫你的農場資料，我們會盡快更新到搜尋頁面上。</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ0jmbWO_H2bsuzpFDTfN6KMCvEwBusDhXz7auUucwxaM71w/viewform" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; padding:0.9rem 2rem;">前往填寫回報表單</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ0jmbWO_H2bsuzpFDTfN6KMCvEwBusDhXz7auUucwxaM71w/viewform" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; padding:0.9rem 2rem;" onclick="trackEvent('form_link_click',{type:'farmer_report'})">前往填寫回報表單</a>
       </div>
 
       <div class="form-section" id="section-report" style="text-align:center; padding: 2rem 0;">
         <div class="warn-box">如果你發現疑似詐騙的帳號（假冒小農、價格異常、多帳號同 LINE 等），請回報幫助其他消費者避雷。</div>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqJGqFmpIW4o-CbV6dYCQ2WVjOTb5_wwe915lCmB9w3FRzw/viewform" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; padding:0.9rem 2rem; margin-top:1rem;">前往填寫檢舉表單</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqJGqFmpIW4o-CbV6dYCQ2WVjOTb5_wwe915lCmB9w3FRzw/viewform" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; padding:0.9rem 2rem; margin-top:1rem;" onclick="trackEvent('form_link_click',{type:'scam_report'})">前往填寫檢舉表單</a>
       </div>
     </div>
   </div><!-- end page-report -->
@@ -151,6 +151,25 @@
   </div>
 
 <script>
+// ===== GA Event Tracking =====
+function trackEvent(name, params = {}) {
+  if (typeof gtag === 'function') {
+    gtag('event', name, params);
+  }
+}
+
+let searchTimer = null;
+function trackSearch(query, resultCount) {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => {
+    if (!query) return;
+    trackEvent('search_used', { query, result_count: resultCount });
+    if (resultCount === 0) {
+      trackEvent('search_no_result', { query });
+    }
+  }, 1000);
+}
+
 let farmers = [];
 let activeRegion = '';
 
@@ -164,6 +183,7 @@ async function loadData() {
   }
   initFilters();
   render();
+  trackEvent('page_loaded', { farmer_count: farmers.length });
 }
 
 function getRegions() {
@@ -177,14 +197,14 @@ function initFilters() {
   const all = document.createElement('button');
   all.className = 'filter-btn active';
   all.textContent = '全部';
-  all.onclick = () => { activeRegion = ''; render(); };
+  all.onclick = () => { activeRegion = ''; render(); trackEvent('region_filter', { region: '全部' }); };
   container.appendChild(all);
 
   getRegions().forEach(r => {
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.textContent = r;
-    btn.onclick = () => { activeRegion = r; render(); };
+    btn.onclick = () => { activeRegion = r; render(); trackEvent('region_filter', { region: r }); };
     container.appendChild(btn);
   });
 }
@@ -200,6 +220,9 @@ function render() {
     }
     return true;
   });
+
+  // Track search
+  if (query) { trackSearch(query, filtered.length); }
 
   // Update filter button states
   document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -224,7 +247,7 @@ function render() {
   }
 
   list.innerHTML = filtered.map(f => {
-    const threadsUrl = `https://www.threads.com/${f.handle.replace('@', '@')}`;
+    const threadsUrl = `https://www.threads.com/${f.handle}`;
     const displayName = f.name ? `${f.name} ${f.handle}` : f.handle;
 
     let certBadges = '';
@@ -237,7 +260,7 @@ function render() {
     return `
       <div class="card">
         <div class="card-top">
-          <div class="card-name"><a href="${threadsUrl}" target="_blank">${displayName}</a></div>
+          <div class="card-name"><a href="${threadsUrl}" target="_blank" onclick="trackEvent('card_click',{handle:'${f.handle}',region:'${f.region}',product:'${f.product?.replace(/'/g,"")?.substring(0,30)}'})">${displayName}</a></div>
           ${f.region ? `<span class="card-region">${f.region}</span>` : ''}
         </div>
         <div class="card-product">${f.product || '（品項待補充）'}${certBadges}</div>
