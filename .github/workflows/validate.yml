@@ -12,31 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate farmers.json syntax
-        run: |
-          echo "Validating JSON syntax..."
-          python3 -c "
-          import json, sys
-          with open('data/farmers.json') as f:
-              data = json.load(f)
-          print(f'✅ Valid JSON — {len(data)} farmers loaded')
-
-          required = ['handle', 'product', 'region']
-          errors = []
-          for i, farmer in enumerate(data):
-              for field in ['handle', 'name', 'product', 'region', 'price', 'buy', 'cert']:
-                  if field not in farmer:
-                      errors.append(f'Row {i}: missing field \"{field}\"')
-              if not farmer.get('handle', '').startswith('@'):
-                  errors.append(f'Row {i}: handle should start with @ (got \"{farmer.get(\"handle\", \"\")}\")')
-
-          if errors:
-              for e in errors:
-                  print(f'❌ {e}')
-              sys.exit(1)
-          else:
-              print('✅ All entries have required fields')
-          "
+      - name: Validate schema
+        run: python3 scripts/validate_schema.py
 
       - name: Check for duplicate handles
         run: |
