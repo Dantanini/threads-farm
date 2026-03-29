@@ -29,8 +29,7 @@
   {"handle":"@frankchiang0107","name":"","product":"綠花椰菜","region":"彰化","price":"","buy":"LINE: 0908277511","cert":""},
   {"handle":"@sufu__life","name":"","product":"竹筍（麻竹筍、綠竹筍、涼筍真空包）","region":"台南","price":"","buy":"","cert":""},
   {"handle":"@_blueberrysweet__","name":"","product":"藍莓、覆盆子","region":"台南","price":"","buy":"","cert":""},
-  {"handle":"@l.__yuuy","name":"","product":"柳丁","region":"南投","price":"","buy":"","cert":""},
-  {"handle":"@_fy.tiang_","name":"","product":"柳丁","region":"南投","price":"","buy":"","cert":""},
+  {"handle":"@l.__yuuy","name":"","product":"櫛瓜、百香果（6月底7月中）","region":"南投","price":"漂亮的10kg $580 / 瑕疵的 $390（含運）","buy":"表單訂購","cert":"","min":"10kg起","ship":"順豐常溫宅配，隔天到貨"},
   {"handle":"@lettuce_cooperative","name":"上山採田","product":"履歷生菜","region":"南投","price":"","buy":"","cert":"產銷履歷"},
   {"handle":"@18ranch","name":"","product":"履歷雞蛋","region":"南投","price":"","buy":"","cert":"產銷履歷"},
   {"handle":"@minghuang_","name":"","product":"山藥","region":"南投","price":"","buy":"","cert":""},
@@ -72,5 +71,6 @@
   {"handle":"@0amber123","name":"","product":"葉菜（白菜、油菜、青江、菠菜等）","region":"","price":"","buy":"","cert":""},
   {"handle":"@_berryhills","name":"","product":"草莓","region":"","price":"","buy":"","cert":""},
   {"handle":"@chuchutwotwo","name":"","product":"玉荷苞荔枝","region":"","price":"","buy":"","cert":""},
-  {"handle":"@jcfruit.tw","name":"","product":"黃檸檬（5月後產季）","region":"","price":"","buy":"","cert":""}
+  {"handle":"@jcfruit.tw","name":"","product":"黃檸檬（5月後產季）","region":"","price":"","buy":"","cert":""},
+  {"handle":"@erica_tsai_","name":"","product":"櫛瓜、牛蕃茄（夏季6月中）、各種蔬菜","region":"","price":"","buy":"","cert":""}
 ]
