@@ -55,6 +55,10 @@ jobs:
       - name: Validate HTML structure
         run: python3 scripts/validate_html.py
 
+      - name: Verify changed farmer data against Threads
+        run: python3 scripts/verify_farmers.py
+        continue-on-error: true
+
       - name: Scan for sensitive data
         run: |
           echo "Scanning for sensitive data patterns..."
