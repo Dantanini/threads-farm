@@ -118,35 +118,14 @@
         <button class="report-tab" onclick="switchReportTab('report')">檢舉可疑帳號</button>
       </div>
 
-      <div class="form-section active" id="section-farmer">
-        <div class="form-group"><label>你的 Threads 帳號 *</label><div class="hint">例：@abc123</div><input type="text" id="f-handle" placeholder="@"></div>
-        <div class="form-group"><label>農場 / 品牌名稱</label><input type="text" id="f-name" placeholder="選填"></div>
-        <div class="form-group"><label>產地 *</label><select id="f-region"><option value="">請選擇</option><option>宜蘭</option><option>基隆</option><option>台北</option><option>新北</option><option>桃園</option><option>新竹</option><option>苗栗</option><option>台中</option><option>彰化</option><option>南投</option><option>雲林</option><option>嘉義</option><option>台南</option><option>高雄</option><option>屏東</option><option>台東</option><option>花蓮</option><option>澎湖</option><option>金門</option><option>馬祖</option></select></div>
-        <div class="form-group"><label>販售品項 *</label><div class="hint">你目前在賣什麼？可以寫多種</div><input type="text" id="f-product" placeholder="例：櫛瓜、小黃瓜"></div>
-        <div class="form-group"><label>價格資訊</label><div class="hint">目前的售價，含運或不含運都可以寫</div><input type="text" id="f-price" placeholder="例：10斤 $500 含運"></div>
-        <div class="form-group"><label>詳細地址</label><div class="hint">農場或出貨地的地址，之後會用來做產地地圖</div><input type="text" id="f-address" placeholder="例：南投縣鹿谷鄉XX路XX號"></div>
-        <div class="form-group"><label>產季</label><div class="hint">什麼時候有貨？避免消費者撲空</div><input type="text" id="f-season" placeholder="例：3月-5月、全年供應"></div>
-        <div class="form-group"><label>最低購買量</label><input type="text" id="f-min" placeholder="例：4斤起、1箱(10斤)起"></div>
-        <div class="form-group"><label>出貨方式</label><div class="checkbox-group" id="ship-group"><label><input type="checkbox" value="宅配"><span>宅配</span></label><label><input type="checkbox" value="超商取貨"><span>超商取貨</span></label><label><input type="checkbox" value="賣貨便"><span>賣貨便</span></label><label><input type="checkbox" value="自取"><span>自取</span></label><label><input type="checkbox" value="郵局寄送"><span>郵局寄送</span></label></div></div>
-        <div class="form-group"><label>購買方式</label><input type="text" id="f-buy" placeholder="例：私訊、Google 表單、賣貨便、LINE"></div>
-        <div class="form-group"><label>其他聯絡方式</label><div class="hint">除了 Threads 之外的聯絡方式</div><input type="text" id="f-contact" placeholder="例：LINE ID: xxx / IG: xxx / 電話: 09xx"></div>
-        <div class="form-group"><label>訂購頁面連結</label><div class="hint">你的訂購表單或購物網站網址（需驗證後才會顯示）</div><input type="url" id="f-order-url" placeholder="例：https://forms.gle/xxx 或購物網站網址"></div>
-        <div class="form-group"><label>認證 / 檢驗（可複選）</label><div class="checkbox-group" id="cert-group"><label><input type="checkbox" value="有機"><span>有機</span></label><label><input type="checkbox" value="產銷履歷"><span>產銷履歷</span></label><label><input type="checkbox" value="農藥未檢出"><span>農藥未檢出</span></label><label><input type="checkbox" value="SGS檢驗"><span>SGS 檢驗</span></label><label><input type="checkbox" value="自然農法"><span>自然農法</span></label><label><input type="checkbox" value="無農藥"><span>無農藥</span></label></div></div>
-        <div class="form-group"><label>檢驗證明上傳</label><div class="hint">有機證書、農藥檢驗報告等，可上傳圖片</div><input type="file" id="f-cert-file" accept="image/*,.pdf" multiple style="font-size:0.85rem;"></div>
-        <div class="form-group"><label>農場簡介</label><div class="hint">一句話介紹你自己，會顯示在搜尋頁上</div><input type="text" id="f-intro" placeholder="用一句話介紹你的農場吧"></div>
-        <div class="form-group"><label>其他想說的</label><textarea id="f-note" placeholder="選填，例如特色、故事..."></textarea></div>
-        <button class="submit-btn" onclick="submitFarmer()">送出回報</button>
-        <div class="success-msg" id="farmer-success"><h3>收到了！</h3><p>感謝你的回報，我們會盡快更新到搜尋頁面上。</p></div>
+      <div class="form-section active" id="section-farmer" style="text-align:center; padding: 2rem 0;">
+        <p style="margin-bottom:1rem; color:#555;">點擊下方按鈕填寫你的農場資料，我們會盡快更新到搜尋頁面上。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScQ0jmbWO_H2bsuzpFDTfN6KMCvEwBusDhXz7auUucwxaM71w/viewform" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; padding:0.9rem 2rem;">前往填寫回報表單</a>
       </div>
 
-      <div class="form-section" id="section-report">
-        <div class="warn-box">如果你發現疑似詐騙的帳號（假冒小農、價格異常、多帳號同 LINE 等），請在這裡回報，幫助其他消費者避雷。</div>
-        <div class="form-group"><label>可疑帳號的 Threads ID *</label><input type="text" id="r-handle" placeholder="@"></div>
-        <div class="form-group"><label>他聲稱在賣什麼？</label><input type="text" id="r-product" placeholder="例：藍莓、土雞蛋"></div>
-        <div class="form-group"><label>你覺得可疑的原因 *</label><div class="checkbox-group" id="reason-group"><label><input type="checkbox" value="價格異常便宜"><span>價格異常便宜</span></label><label><input type="checkbox" value="多帳號同LINE"><span>多帳號導到同一個 LINE</span></label><label><input type="checkbox" value="冒充官方"><span>冒充官方機構</span></label><label><input type="checkbox" value="買別人的轉賣"><span>不是自己種的，轉賣</span></label><label><input type="checkbox" value="帳號像假的"><span>帳號名像假的（亂數）</span></label><label><input type="checkbox" value="其他"><span>其他</span></label></div></div>
-        <div class="form-group"><label>補充說明</label><textarea id="r-note" placeholder="可以貼相關的 Threads 連結"></textarea></div>
-        <button class="submit-btn" onclick="submitReport()">送出檢舉</button>
-        <div class="success-msg" id="report-success"><h3>感謝你的回報！</h3><p>我們會查核後標記可疑帳號，保護大家的消費安全。</p></div>
+      <div class="form-section" id="section-report" style="text-align:center; padding: 2rem 0;">
+        <div class="warn-box">如果你發現疑似詐騙的帳號（假冒小農、價格異常、多帳號同 LINE 等），請回報幫助其他消費者避雷。</div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeTqJGqFmpIW4o-CbV6dYCQ2WVjOTb5_wwe915lCmB9w3FRzw/viewform" target="_blank" class="submit-btn" style="display:inline-block; text-decoration:none; padding:0.9rem 2rem; margin-top:1rem;">前往填寫檢舉表單</a>
       </div>
     </div>
   </div><!-- end page-report -->
@@ -347,63 +326,6 @@ function switchReportTab(tab) {
   });
   document.getElementById('section-farmer').classList.toggle('active', tab === 'farmer');
   document.getElementById('section-report').classList.toggle('active', tab === 'report');
-  document.getElementById('farmer-success').style.display = 'none';
-  document.getElementById('report-success').style.display = 'none';
-}
-
-function getChecked(id) {
-  return [...document.getElementById(id).querySelectorAll('input:checked')].map(cb => cb.value);
-}
-
-function submitFarmer() {
-  const handle = document.getElementById('f-handle').value.trim();
-  const product = document.getElementById('f-product').value.trim();
-  const region = document.getElementById('f-region').value;
-  if (!handle || !product || !region) { alert('請至少填寫 Threads 帳號、產地和品項'); return; }
-
-  // 檢查是否已在清單中
-  const known = farmers.find(f => f.handle.toLowerCase() === handle.toLowerCase() || f.handle.toLowerCase() === ('@' + handle.replace('@','')).toLowerCase());
-  if (!known) { alert('目前僅限已收錄的小農更新資料喔！如果你想加入清單，請到 Threads 上找我們的帖文留言自薦。'); return; }
-
-  const data = {
-    type: 'farmer_update', handle, name: document.getElementById('f-name').value.trim(),
-    region, product, price: document.getElementById('f-price').value.trim(),
-    address: document.getElementById('f-address').value.trim(),
-    season: document.getElementById('f-season').value.trim(),
-    min: document.getElementById('f-min').value.trim(),
-    shipping: getChecked('ship-group'),
-    buy: document.getElementById('f-buy').value.trim(),
-    contact: document.getElementById('f-contact').value.trim(),
-    orderUrl: document.getElementById('f-order-url').value.trim(),
-    cert: getChecked('cert-group'),
-    hasCertFile: document.getElementById('f-cert-file').files.length > 0,
-    intro: document.getElementById('f-intro').value.trim(),
-    note: document.getElementById('f-note').value.trim(), time: new Date().toISOString()
-  };
-  const reports = JSON.parse(localStorage.getItem('cuicui-reports') || '[]');
-  reports.push(data);
-  localStorage.setItem('cuicui-reports', JSON.stringify(reports));
-  document.getElementById('farmer-success').style.display = 'block';
-  ['f-handle','f-name','f-product','f-price','f-address','f-season','f-min','f-buy','f-contact','f-order-url','f-intro','f-note'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('f-region').value = '';
-  document.getElementById('f-cert-file').value = '';
-  document.querySelectorAll('#cert-group input, #ship-group input').forEach(cb => cb.checked = false);
-}
-
-function submitReport() {
-  const handle = document.getElementById('r-handle').value.trim();
-  const reasons = getChecked('reason-group');
-  if (!handle || reasons.length === 0) { alert('請填寫可疑帳號並至少選一個可疑原因'); return; }
-  const data = {
-    type: 'scam_report', handle, product: document.getElementById('r-product').value.trim(),
-    reasons, note: document.getElementById('r-note').value.trim(), time: new Date().toISOString()
-  };
-  const reports = JSON.parse(localStorage.getItem('cuicui-reports') || '[]');
-  reports.push(data);
-  localStorage.setItem('cuicui-reports', JSON.stringify(reports));
-  document.getElementById('report-success').style.display = 'block';
-  ['r-handle','r-product','r-note'].forEach(id => document.getElementById(id).value = '');
-  document.querySelectorAll('#reason-group input').forEach(cb => cb.checked = false);
 }
 
 initFilters();
