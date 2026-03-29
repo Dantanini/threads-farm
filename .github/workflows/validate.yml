@@ -1,0 +1,66 @@
+name: Validate Data
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate farmers.json syntax
+        run: |
+          echo "Validating JSON syntax..."
+          python3 -c "
+          import json, sys
+          with open('data/farmers.json') as f:
+              data = json.load(f)
+          print(f'✅ Valid JSON — {len(data)} farmers loaded')
+
+          required = ['handle', 'product', 'region']
+          errors = []
+          for i, farmer in enumerate(data):
+              for field in ['handle', 'name', 'product', 'region', 'price', 'buy', 'cert']:
+                  if field not in farmer:
+                      errors.append(f'Row {i}: missing field \"{field}\"')
+              if not farmer.get('handle', '').startswith('@'):
+                  errors.append(f'Row {i}: handle should start with @ (got \"{farmer.get(\"handle\", \"\")}\")')
+
+          if errors:
+              for e in errors:
+                  print(f'❌ {e}')
+              sys.exit(1)
+          else:
+              print('✅ All entries have required fields')
+          "
+
+      - name: Check for duplicate handles
+        run: |
+          python3 -c "
+          import json
+          with open('data/farmers.json') as f:
+              data = json.load(f)
+          handles = [d['handle'] for d in data]
+          dupes = [h for h in handles if handles.count(h) > 1]
+          if dupes:
+              print(f'⚠️ Duplicate handles: {set(dupes)}')
+          else:
+              print('✅ No duplicate handles')
+          "
+
+      - name: Validate HTML structure
+        run: python3 scripts/validate_html.py
+
+      - name: Scan for sensitive data
+        run: |
+          echo "Scanning for sensitive data patterns..."
+          if grep -rEi '(bot.?token|api.?key|secret.?key|password\s*[:=])\s*[:=]\s*["\x27]' --include='*.html' --include='*.js' --include='*.json' . | grep -v node_modules | grep -v '.github'; then
+            echo "❌ Potential sensitive data found!"
+            exit 1
+          else
+            echo "✅ No sensitive data detected"
+          fi
