@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["handle", "product", "region"],
+    "properties": {
+      "handle": {
+        "type": "string",
+        "pattern": "^@.+",
+        "description": "Threads handle, must start with @"
+      },
+      "name": {
+        "type": "string",
+        "description": "Farm or brand name"
+      },
+      "product": {
+        "type": "string",
+        "description": "Products sold"
+      },
+      "region": {
+        "type": "string",
+        "enum": ["", "宜蘭", "基隆", "台北", "新北", "桃園", "新竹", "苗栗", "台中", "彰化", "南投", "雲林", "嘉義", "台南", "高雄", "屏東", "台東", "花蓮", "澎湖", "金門", "馬祖"],
+        "description": "Region (empty string allowed for unknown)"
+      },
+      "price": {
+        "type": "string",
+        "description": "Price info"
+      },
+      "buy": {
+        "type": "string",
+        "description": "How to purchase"
+      },
+      "cert": {
+        "type": "string",
+        "description": "Certifications (comma separated)"
+      },
+      "min": {
+        "type": "string",
+        "description": "Minimum order quantity"
+      },
+      "ship": {
+        "type": "string",
+        "description": "Shipping method"
+      },
+      "url": {
+        "type": "string",
+        "description": "Custom URL (overrides default Threads link)"
+      },
+      "category": {
+        "type": "string",
+        "enum": ["", "蔬菜", "水果", "米糧", "蛋肉", "蜂蜜", "調味", "加工品"],
+        "description": "Product category for filtering"
+      },
+      "verified": {
+        "type": "string",
+        "pattern": "^$|^\\d{4}-\\d{2}-\\d{2}$",
+        "description": "Verification date (YYYY-MM-DD) or empty"
+      }
+    },
+    "additionalProperties": false
+  }
+}
