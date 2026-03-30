@@ -1,0 +1,73 @@
+name: Sync Google Sheet to farmers.json
+
+on:
+  schedule:
+    - cron: '0 19 * * *'  # UTC 19:00 = 台灣 03:00
+  workflow_dispatch:  # 手動觸發
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: develop
+
+      - name: Fetch Google Sheet data
+        run: |
+          curl -sL 'https://script.google.com/macros/s/AKfycbyh3jm4c_hkrIzIXnur7BEp5oAUzjm7kA17Yh00Qavbxnvf5UD77YgILJSct4Xae5U/exec' -o /tmp/sheet_data.json
+          echo "Fetched $(python3 -c "import json; print(len(json.load(open('/tmp/sheet_data.json'))))" ) entries from Sheet"
+
+      - name: Compare with farmers.json
+        id: compare
+        run: |
+          python3 -c "
+          import json
+
+          with open('data/farmers.json') as f:
+              local = json.load(f)
+          with open('/tmp/sheet_data.json') as f:
+              sheet = json.load(f)
+
+          local_handles = {e['handle'] for e in local}
+          sheet_handles = {e['handle'] for e in sheet}
+
+          added = sheet_handles - local_handles
+          removed = local_handles - sheet_handles
+          count_diff = len(sheet) - len(local)
+
+          if added or removed or count_diff != 0:
+              print(f'Changes detected: +{len(added)} -{len(removed)} (total diff: {count_diff})')
+              if added: print(f'  Added: {added}')
+              if removed: print(f'  Removed: {removed}')
+              # Write new data
+              with open('data/farmers.json', 'w') as f:
+                  json.dump(sheet, f, ensure_ascii=False, indent=2)
+              print('CHANGED=true')
+              with open('$GITHUB_OUTPUT', 'a') as f:
+                  f.write('changed=true\n')
+          else:
+              print('No changes detected')
+              with open('$GITHUB_OUTPUT', 'a') as f:
+                  f.write('changed=false\n')
+          "
+
+      - name: Validate synced data
+        if: steps.compare.outputs.changed == 'true'
+        run: python3 scripts/validate_schema.py
+
+      - name: Create PR
+        if: steps.compare.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          BRANCH="auto/sync-sheet-$(date +%Y%m%d)"
+          git checkout -b "$BRANCH"
+          git add data/farmers.json
+          git commit -m "chore: sync farmers.json from Google Sheet"
+          git push origin "$BRANCH"
+          gh pr create --base develop --head "$BRANCH" \
+            --title "chore: auto-sync farmers.json from Google Sheet" \
+            --body "Automated daily sync from Google Sheet. CI validation passed."
