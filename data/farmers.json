@@ -7,9 +7,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@2wsx36951",
@@ -19,9 +23,13 @@
     "price": "",
     "buy": "",
     "cert": "有機",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@to_get_her2018",
@@ -31,9 +39,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@guobafarm",
@@ -43,9 +55,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@kiki__vanilla",
@@ -55,9 +71,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "有機",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@zhong.sen_",
@@ -67,9 +87,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@krista0427",
@@ -79,9 +103,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@lushun_asparagus",
@@ -91,9 +119,13 @@
     "price": "",
     "buy": "私訊表單",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@lwsocialenterprise",
@@ -103,9 +135,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@enen3154",
@@ -116,9 +152,12 @@
     "buy": "私訊",
     "cert": "農藥未檢出",
     "min": "7斤起",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@mengtianfarm",
@@ -128,9 +167,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@guoran_daily",
@@ -140,9 +183,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@mountain_chicken888",
@@ -152,9 +199,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蛋肉",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@passonthetreasure",
@@ -164,9 +215,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@koo060060",
@@ -176,9 +231,13 @@
     "price": "",
     "buy": "私訊/IG",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@chih__sheng",
@@ -188,9 +247,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@yt_1203",
@@ -200,9 +263,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@alice60577",
@@ -212,9 +279,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@kevin7892001",
@@ -224,9 +295,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@m948avia",
@@ -236,9 +311,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@mumu_farmer",
@@ -248,9 +327,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@samhighhung",
@@ -260,9 +343,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@vegetable0722",
@@ -272,9 +359,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@duffy_kittybaby",
@@ -284,9 +375,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@abcd._.5410",
@@ -296,9 +391,13 @@
     "price": "7斤$280（原$320）",
     "buy": "賣貨便",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@autumns0210",
@@ -308,9 +407,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@dongtians",
@@ -321,9 +424,12 @@
     "buy": "私訊",
     "cert": "",
     "min": "4斤起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@frankchiang0107",
@@ -333,9 +439,13 @@
     "price": "",
     "buy": "LINE: 0908277511",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@sufu__life",
@@ -345,9 +455,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@_blueberrysweet__",
@@ -357,9 +471,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@l.__yuuy",
@@ -371,9 +489,11 @@
     "cert": "",
     "min": "10kg起",
     "ship": "順豐常溫宅配，隔天到貨",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@_fy.tiang_",
@@ -383,9 +503,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@lettuce_cooperative",
@@ -395,9 +519,13 @@
     "price": "",
     "buy": "官方LINE",
     "cert": "產銷履歷、定期抽樣檢驗",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@18ranch",
@@ -407,9 +535,13 @@
     "price": "",
     "buy": "",
     "cert": "產銷履歷",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蛋肉",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@minghuang_",
@@ -419,9 +551,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@unaxx87",
@@ -433,9 +569,11 @@
     "cert": "",
     "min": "",
     "ship": "黑貓常溫宅配",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@ngdealhouse",
@@ -445,9 +583,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@wei__24690",
@@ -458,9 +600,12 @@
     "buy": "IG 私訊",
     "cert": "",
     "min": "5斤起",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@milk398",
@@ -471,9 +616,12 @@
     "buy": "Google 表單",
     "cert": "產銷履歷、溫室無農藥",
     "min": "10kg起",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@jl___013",
@@ -484,9 +632,12 @@
     "buy": "私訊",
     "cert": "",
     "min": "4斤起",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@unishow_farm",
@@ -496,9 +647,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@gherkin_1216",
@@ -509,9 +664,12 @@
     "buy": "私訊",
     "cert": "自主送驗、採收無用藥",
     "min": "10kg起",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@suyuqisu",
@@ -521,9 +679,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@mumu_seasonslemon",
@@ -533,9 +695,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@smileniuniu",
@@ -545,9 +711,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@skyebayclub",
@@ -557,9 +727,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@whale__diary2024",
@@ -570,9 +744,12 @@
     "buy": "官方 LINE",
     "cert": "",
     "min": "1箱(10-11斤)起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@open761226",
@@ -582,9 +759,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@bb0916g",
@@ -594,9 +775,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@liaojuntang9",
@@ -606,9 +791,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@willyfarm2023",
@@ -618,9 +807,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@sister_water_",
@@ -630,9 +823,13 @@
     "price": "",
     "buy": "",
     "cert": "有機",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@chain_227",
@@ -642,9 +839,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@z081972",
@@ -654,9 +855,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@sophie19880308",
@@ -666,9 +871,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@hungju_life",
@@ -678,9 +887,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@811215dream",
@@ -690,9 +903,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@luck90562",
@@ -702,9 +919,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@wenli__1128",
@@ -714,9 +935,13 @@
     "price": "帶殼$30/斤、剝殼$180/斤",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@paige.0621",
@@ -726,9 +951,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@garlic77.tw",
@@ -738,9 +967,13 @@
     "price": "蒜頭60元/斤 / 地瓜10斤$290 / 紅蔥頭10斤$600",
     "buy": "賣貨便/私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@wsf.0121",
@@ -750,9 +983,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@thegoodthing_tw",
@@ -762,9 +999,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "調味",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@xushengfu",
@@ -774,9 +1015,13 @@
     "price": "單入$450 / 六入$2250",
     "buy": "私訊",
     "cert": "SGS 410項農藥零檢出、自然農法",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "加工品",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@pro_bro_avocado",
@@ -786,9 +1031,13 @@
     "price": "待產季",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@hugarlic",
@@ -798,9 +1047,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@tenyi_soysause1960",
@@ -810,9 +1063,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "調味",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@peak_view2025",
@@ -822,9 +1079,13 @@
     "price": "",
     "buy": "",
     "cert": "無農藥",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@helen7533967",
@@ -834,9 +1095,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@0amber123",
@@ -846,9 +1111,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@_berryhills",
@@ -858,9 +1127,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@chuchutwotwo",
@@ -870,9 +1143,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@jcfruit.tw",
@@ -882,9 +1159,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@erica_tsai_",
@@ -894,9 +1175,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@cheng_farm",
@@ -906,9 +1191,13 @@
     "price": "",
     "buy": "電話預約 / 私訊 / 量多開表單",
     "cert": "無毒、無農藥、無化學肥料、網室栽種",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@sunny19941219",
@@ -918,9 +1207,13 @@
     "price": "$350-$1500/箱，全台免運",
     "buy": "",
     "cert": "網室無毒栽種",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@fuji_tayal",
@@ -931,9 +1224,12 @@
     "buy": "私訊/Google表單/LINE/IG/電話",
     "cert": "農藥未檢出、SGS檢驗",
     "min": "一盒起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@fruits.rural",
@@ -943,9 +1239,13 @@
     "price": "",
     "buy": "",
     "cert": "自產自銷",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@chiu_627",
@@ -955,9 +1255,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@___0210___",
@@ -967,9 +1271,13 @@
     "price": "",
     "buy": "私訊訂購",
     "cert": "溫室栽種",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@hass_3399",
@@ -980,9 +1288,12 @@
     "buy": "LINE",
     "cert": "有機、農藥未檢出、自然農法、無農藥",
     "min": "3斤起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@cilowmon",
@@ -992,9 +1303,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@_mr.dai_honey_",
@@ -1004,9 +1319,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蜂蜜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@siaoba_",
@@ -1016,9 +1335,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@diooomi575",
@@ -1029,9 +1352,12 @@
     "buy": "預購Google表單 / 自取",
     "cert": "自然農法",
     "min": "一箱2.5斤起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@linxinying400",
@@ -1041,10 +1367,13 @@
     "price": "百香果10斤$1300含運 / 芭樂10斤$500 / 鳳梨1箱$960免運",
     "buy": "私訊FB",
     "cert": "",
+    "min": "",
+    "ship": "",
     "url": "https://www.facebook.com/mamalin1216",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@l0976690676",
@@ -1055,9 +1384,12 @@
     "buy": "私訊 / 官方LINE",
     "cert": "",
     "min": "一盒起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@yuansiang_2009",
@@ -1067,9 +1399,13 @@
     "price": "",
     "buy": "私訊LINE",
     "cert": "有機",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "米糧",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@sarly317",
@@ -1079,9 +1415,13 @@
     "price": "隨市價調整",
     "buy": "私訊",
     "cert": "產銷履歷",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@yusin_____",
@@ -1091,9 +1431,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "海鮮",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@shimiaohua",
@@ -1103,9 +1447,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "海鮮",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@a_ge_farm",
@@ -1115,9 +1463,13 @@
     "price": "",
     "buy": "LINE私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@jyr_0923",
@@ -1127,9 +1479,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@xiu_o87o",
@@ -1139,9 +1495,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@asiaplants1992",
@@ -1151,9 +1511,13 @@
     "price": "",
     "buy": "官網/私訊",
     "cert": "有機",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@yuxiang5024",
@@ -1163,9 +1527,13 @@
     "price": "",
     "buy": "",
     "cert": "",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@277hometown.official",
@@ -1176,9 +1544,12 @@
     "buy": "LINE@",
     "cert": "農藥未檢出",
     "min": "1斤起",
+    "ship": "",
+    "url": "",
     "category": "水果",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@bu_wuli",
@@ -1189,9 +1560,12 @@
     "buy": "私訊/官方LINE",
     "cert": "SGS檢驗",
     "min": "1.5斤/盒起",
+    "ship": "",
+    "url": "",
     "category": "蛋肉",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@longho2022.tw",
@@ -1201,9 +1575,13 @@
     "price": "",
     "buy": "私訊",
     "cert": "友善耕作、無農藥",
+    "min": "",
+    "ship": "",
+    "url": "",
     "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   },
   {
     "handle": "@celerynfruit.fan",
@@ -1213,9 +1591,12 @@
     "price": "",
     "buy": "私訊/Google Form",
     "cert": "有機（慈心有機驗證）",
-    "category": "蔬菜",
+    "min": "",
+    "ship": "",
     "url": "https://www.instagram.com/celerynfruit.fan",
+    "category": "蔬菜",
+    "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-03-30"
+    "updated_at": "2026-03-31"
   }
 ]

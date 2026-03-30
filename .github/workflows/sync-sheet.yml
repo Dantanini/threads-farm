@@ -22,39 +22,45 @@ jobs:
         id: compare
         run: |
           python3 -c "
-          import json
+          import json, os
 
           with open('data/farmers.json') as f:
               local = json.load(f)
           with open('/tmp/sheet_data.json') as f:
               sheet = json.load(f)
 
-          local_handles = {e['handle'] for e in local}
-          sheet_handles = {e['handle'] for e in sheet}
+          # Full content comparison (not just handles)
+          local_json = json.dumps(local, ensure_ascii=False, sort_keys=True)
+          sheet_json = json.dumps(sheet, ensure_ascii=False, sort_keys=True)
 
-          added = sheet_handles - local_handles
-          removed = local_handles - sheet_handles
-          count_diff = len(sheet) - len(local)
+          if local_json != sheet_json:
+              # Detail what changed
+              local_map = {e['handle']: e for e in local}
+              sheet_map = {e['handle']: e for e in sheet}
+              added = set(sheet_map) - set(local_map)
+              removed = set(local_map) - set(sheet_map)
+              modified = [h for h in set(local_map) & set(sheet_map) if local_map[h] != sheet_map[h]]
 
-          if added or removed or count_diff != 0:
-              print(f'Changes detected: +{len(added)} -{len(removed)} (total diff: {count_diff})')
+              print(f'Changes detected: +{len(added)} -{len(removed)} ~{len(modified)}')
               if added: print(f'  Added: {added}')
               if removed: print(f'  Removed: {removed}')
-              # Write new data
+              if modified: print(f'  Modified: {modified}')
+
               with open('data/farmers.json', 'w') as f:
                   json.dump(sheet, f, ensure_ascii=False, indent=2)
-              print('CHANGED=true')
-              with open('$GITHUB_OUTPUT', 'a') as f:
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
                   f.write('changed=true\n')
           else:
               print('No changes detected')
-              with open('$GITHUB_OUTPUT', 'a') as f:
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
                   f.write('changed=false\n')
           "
 
       - name: Validate synced data
         if: steps.compare.outputs.changed == 'true'
-        run: python3 scripts/validate_schema.py
+        run: |
+          python3 scripts/validate_schema.py
+          python3 scripts/test_data_sources.py
 
       - name: Create PR
         if: steps.compare.outputs.changed == 'true'
@@ -63,7 +69,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          BRANCH="auto/sync-sheet-$(date +%Y%m%d)"
+          BRANCH="auto/sync-sheet-$(date +%Y%m%d-%H%M%S)"
           git checkout -b "$BRANCH"
           git add data/farmers.json
           git commit -m "chore: sync farmers.json from Google Sheet"
