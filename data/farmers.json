@@ -326,11 +326,11 @@
   {
     "handle": "@lettuce_cooperative",
     "name": "上山採田",
-    "product": "履歷生菜",
+    "product": "超過8種生菜、各式香料產品",
     "region": "南投",
     "price": "",
-    "buy": "",
-    "cert": "產銷履歷",
+    "buy": "官方LINE",
+    "cert": "產銷履歷、定期抽樣檢驗",
     "category": "蔬菜"
   },
   {
@@ -593,12 +593,12 @@
   {
     "handle": "@wenli__1128",
     "name": "",
-    "product": "蒜頭、玉米筍",
+    "product": "紅鬚玉米筍、蒜頭",
     "region": "雲林",
-    "price": "",
-    "buy": "",
+    "price": "帶殼$30/斤、剝殼$180/斤",
+    "buy": "私訊",
     "cert": "",
-    "category": "米糧"
+    "category": "蔬菜"
   },
   {
     "handle": "@paige.0621",
@@ -744,7 +744,7 @@
     "handle": "@erica_tsai_",
     "name": "",
     "product": "櫛瓜、牛蕃茄（夏季6月中）、各種蔬菜",
-    "region": "",
+    "region": "嘉義",
     "price": "",
     "buy": "",
     "cert": "",
@@ -872,7 +872,7 @@
     "buy": "私訊FB",
     "cert": "",
     "url": "https://www.facebook.com/mamalin1216",
-    "category": "加工品"
+    "category": "水果"
   },
   {
     "handle": "@l0976690676",
@@ -944,5 +944,78 @@
     "buy": "私訊",
     "cert": "",
     "category": "水果"
+  },
+  {
+    "handle": "@xiu_o87o",
+    "name": "",
+    "product": "芭樂",
+    "region": "彰化",
+    "price": "",
+    "buy": "私訊",
+    "cert": "",
+    "category": "水果"
+  },
+  {
+    "handle": "@asiaplants1992",
+    "name": "亞植有機農場",
+    "product": "有機蔬菜、有機雞蛋、有機滴雞精、雞高湯",
+    "region": "桃園",
+    "price": "",
+    "buy": "官網/私訊",
+    "cert": "有機",
+    "category": "蔬菜"
+  },
+  {
+    "handle": "@yuxiang5024",
+    "name": "",
+    "product": "馬鈴薯（產季12-3月）",
+    "region": "台中",
+    "price": "",
+    "buy": "",
+    "cert": "",
+    "category": "蔬菜"
+  },
+  {
+    "handle": "@277hometown.official",
+    "name": "荖家小農工作坊",
+    "product": "燈籠果、燈籠果果乾、燈籠果果醬",
+    "region": "彰化",
+    "price": "$599/$699/$899含運",
+    "buy": "LINE@",
+    "cert": "農藥未檢出",
+    "min": "1斤起",
+    "category": "水果"
+  },
+  {
+    "handle": "@bu_wuli",
+    "name": "七福蛋",
+    "product": "雞蛋（紅殼紅仁）",
+    "region": "苗栗",
+    "price": "一盒1.5斤",
+    "buy": "私訊/官方LINE",
+    "cert": "SGS檢驗",
+    "min": "1.5斤/盒起",
+    "category": "蛋肉"
+  },
+  {
+    "handle": "@longho2022.tw",
+    "name": "",
+    "product": "玉米筍、西瓜、皇宮菜、秋葵、草莓、生菜、小番茄",
+    "region": "屏東",
+    "price": "",
+    "buy": "私訊",
+    "cert": "友善耕作、無農藥",
+    "category": "蔬菜"
+  },
+  {
+    "handle": "@celerynfruit.fan",
+    "name": "妙都蔬果行",
+    "product": "本土有機西芹",
+    "region": "台中",
+    "price": "",
+    "buy": "私訊/Google Form",
+    "cert": "有機（慈心有機驗證）",
+    "category": "蔬菜",
+    "url": "https://www.instagram.com/celerynfruit.fan"
   }
 ]
