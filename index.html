@@ -174,7 +174,9 @@ function trackSearch(query, resultCount) {
 let farmers = [];
 let activeRegion = '';
 let activeCategory = '';
-const CATEGORIES = ['蔬菜','水果','米糧','蛋肉','蜂蜜','調味','加工品'];
+function getCategories() {
+  return [...new Set(farmers.map(f => f.category).filter(c => c))].sort();
+}
 
 async function loadData() {
   try {
@@ -227,9 +229,7 @@ function initCategoryFilters() {
   all.onclick = () => { activeCategory = ''; render(); };
   container.appendChild(all);
 
-  CATEGORIES.forEach(c => {
-    // Only show categories that exist in data
-    if (!farmers.some(f => f.category === c)) return;
+  getCategories().forEach(c => {
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.textContent = c;

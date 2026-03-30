@@ -33,6 +33,10 @@ for element_id in ['search', 'region-filters', 'card-list']:
     if element_id not in html:
         errors.append(f'Missing element id "{element_id}"')
 
+# Check no hardcoded category array (should be dynamic from data)
+if re.search(r"const CATEGORIES\s*=", html):
+    errors.append('CATEGORIES is hardcoded — should use getCategories() from data to avoid missing categories')
+
 if errors:
     for e in errors:
         print(f'❌ {e}')
