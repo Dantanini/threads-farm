@@ -112,6 +112,7 @@
   </div>
 
   <div class="filters" id="region-filters"></div>
+  <div class="filters" id="category-filters"></div>
 
   <div class="stats">
     <div class="stat-card"><div class="num" id="stat-farmers">0</div><div class="label">小農</div></div>
@@ -172,6 +173,10 @@ function trackSearch(query, resultCount) {
 
 let farmers = [];
 let activeRegion = '';
+let activeCategory = '';
+function getCategories() {
+  return [...new Set(farmers.map(f => f.category).filter(c => c))].sort();
+}
 
 async function loadData() {
   try {
@@ -182,6 +187,7 @@ async function loadData() {
     farmers = [];
   }
   initFilters();
+  initCategoryFilters();
   render();
   trackEvent('page_loaded', { farmer_count: farmers.length });
 }
@@ -209,11 +215,35 @@ function initFilters() {
   });
 }
 
+function initCategoryFilters() {
+  const container = document.getElementById('category-filters');
+  container.innerHTML = '';
+
+  // Only show if any farmer has category
+  const hasCategories = farmers.some(f => f.category);
+  if (!hasCategories) return;
+
+  const all = document.createElement('button');
+  all.className = 'filter-btn active';
+  all.textContent = '全部品類';
+  all.onclick = () => { activeCategory = ''; render(); };
+  container.appendChild(all);
+
+  getCategories().forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.textContent = c;
+    btn.onclick = () => { activeCategory = c; render(); trackEvent('category_filter', { category: c }); };
+    container.appendChild(btn);
+  });
+}
+
 function render() {
   const query = document.getElementById('search').value.trim().toLowerCase();
 
   let filtered = farmers.filter(f => {
     if (activeRegion && f.region !== activeRegion) return false;
+    if (activeCategory && f.category !== activeCategory) return false;
     if (query) {
       const searchText = `${f.handle} ${f.name} ${f.product} ${f.region} ${f.price} ${f.cert}`.toLowerCase();
       return query.split(/\s+/).every(q => searchText.includes(q));
@@ -225,9 +255,14 @@ function render() {
   if (query) { trackSearch(query, filtered.length); }
 
   // Update filter button states
-  document.querySelectorAll('.filter-btn').forEach(btn => {
+  document.querySelectorAll('#region-filters .filter-btn').forEach(btn => {
     btn.classList.toggle('active',
       (btn.textContent === '全部' && !activeRegion) || btn.textContent === activeRegion
+    );
+  });
+  document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
+    btn.classList.toggle('active',
+      (btn.textContent === '全部品類' && !activeCategory) || btn.textContent === activeCategory
     );
   });
 
@@ -247,7 +282,7 @@ function render() {
   }
 
   list.innerHTML = filtered.map(f => {
-    const threadsUrl = `https://www.threads.com/${f.handle}`;
+    const threadsUrl = f.url || `https://www.threads.com/${f.handle}`;
     const displayName = f.name ? `${f.name} ${f.handle}` : f.handle;
 
     let certBadges = '';
