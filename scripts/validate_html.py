@@ -37,6 +37,26 @@ for element_id in ['search', 'region-filters', 'card-list']:
 if re.search(r"const CATEGORIES\s*=", html):
     errors.append('CATEGORIES is hardcoded — should use getCategories() from data to avoid missing categories')
 
+# Check fallback data loading pattern (stale-while-revalidate)
+# Stage 1: farmers.json must be fetched first
+fallback_fetch = re.search(r"fetch\(['\"]data/farmers\.json['\"]\)", html)
+# Stage 2: Sheet API must be fetched after
+sheet_fetch = re.search(r"fetch\(SHEET_API\)", html)
+# SHEET_API constant must exist
+sheet_const = re.search(r"const SHEET_API\s*=", html)
+
+if not fallback_fetch:
+    errors.append('Missing fallback fetch for data/farmers.json')
+if not sheet_const:
+    errors.append('Missing SHEET_API constant')
+if not sheet_fetch:
+    errors.append('Missing Sheet API fetch call')
+if fallback_fetch and sheet_fetch:
+    if fallback_fetch.start() > sheet_fetch.start():
+        errors.append('Fallback (farmers.json) must be fetched BEFORE Sheet API (stale-while-revalidate)')
+    else:
+        print('PASS: Fallback logic correct (farmers.json first, then Sheet API)')
+
 if errors:
     for e in errors:
         print(f'❌ {e}')
