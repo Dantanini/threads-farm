@@ -178,13 +178,26 @@ function getCategories() {
   return [...new Set(farmers.map(f => f.category).filter(c => c))].sort();
 }
 
+const SHEET_API = 'https://script.google.com/macros/s/AKfycbyh3jm4c_hkrIzIXnur7BEp5oAUzjm7kA17Yh00Qavbxnvf5UD77YgILJSct4Xae5U/exec';
+
 async function loadData() {
+  // 優先讀 Google Sheet API，失敗則 fallback 到 farmers.json
   try {
-    const res = await fetch('data/farmers.json');
-    farmers = await res.json();
+    const res = await fetch(SHEET_API);
+    if (res.ok) {
+      farmers = await res.json();
+    } else {
+      throw new Error('Sheet API failed');
+    }
   } catch (e) {
-    console.error('Failed to load farmer data:', e);
-    farmers = [];
+    console.warn('Sheet API unavailable, using fallback:', e.message);
+    try {
+      const res = await fetch('data/farmers.json');
+      farmers = await res.json();
+    } catch (e2) {
+      console.error('Fallback also failed:', e2);
+      farmers = [];
+    }
   }
   initFilters();
   initCategoryFilters();
