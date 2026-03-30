@@ -88,10 +88,29 @@
     .success-msg p { color: #555; font-size: 0.9rem; }
     .warn-box { background: #fff3e0; border: 1px solid #ffcc80; border-radius: 8px; padding: 0.8rem; margin-bottom: 1.2rem; font-size: 0.85rem; color: #e65100; }
 
+    /* Toast 通知 */
+    .toast { position: fixed; bottom: 1.5rem; left: 50%; transform: translateX(-50%) translateY(100px); background: #616161; color: white; padding: 0.7rem 1.5rem; border-radius: 10px; font-size: 0.85rem; z-index: 999; transition: transform 0.3s ease, background 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    .toast.success { background: #2e7d32; }
+
+    /* Category 品類按鈕顏色 */
+    .cat-蔬菜 { background: #e8f5e9 !important; color: #2e7d32 !important; border-color: #a5d6a7 !important; }
+    .cat-水果 { background: #fff3e0 !important; color: #e65100 !important; border-color: #ffcc80 !important; }
+    .cat-米糧 { background: #efebe9 !important; color: #5d4037 !important; border-color: #bcaaa4 !important; }
+    .cat-蛋肉 { background: #fce4ec !important; color: #c62828 !important; border-color: #f48fb1 !important; }
+    .cat-海鮮 { background: #e3f2fd !important; color: #1565c0 !important; border-color: #90caf9 !important; }
+    .cat-蜂蜜 { background: #fff8e1 !important; color: #f9a825 !important; border-color: #ffe082 !important; }
+    .cat-調味 { background: #f3e5f5 !important; color: #7b1fa2 !important; border-color: #ce93d8 !important; }
+    .cat-加工品 { background: #f5f5f5 !important; color: #616161 !important; border-color: #bdbdbd !important; }
+
+    /* Category badge on card */
+    .badge-cat { font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 8px; margin-left: 0.3rem; }
+
     @media (max-width: 480px) {
       .header h1 { font-size: 1.4rem; }
       .stats { gap: 0.5rem; }
       .stat-card { padding: 0.6rem; }
+      .toast { bottom: 1rem; font-size: 0.8rem; padding: 0.6rem 1.2rem; }
     }
   </style>
 </head>
@@ -146,6 +165,8 @@
     </div>
   </div><!-- end page-report -->
 
+  <div class="toast" id="toast"></div>
+
   <div class="footer">
     脆脆找菜 — 資料僅供參考，實際品項、價格及供貨狀況請再詢問賣家喔，謝謝！<br>
     本平台不為任何賣家身份或品質背書。如需下架或更正資料請聯繫 <a href="https://www.threads.com/@ininbeta" target="_blank" style="color:#4a7c59;">@ininbeta</a>
@@ -178,18 +199,48 @@ function getCategories() {
   return [...new Set(farmers.map(f => f.category).filter(c => c))].sort();
 }
 
+const SHEET_API = 'https://script.google.com/macros/s/AKfycbyh3jm4c_hkrIzIXnur7BEp5oAUzjm7kA17Yh00Qavbxnvf5UD77YgILJSct4Xae5U/exec';
+
+function showToast(msg, isSuccess) {
+  const el = document.getElementById('toast');
+  if (!el) return;
+  el.textContent = msg;
+  el.classList.remove('success');
+  if (isSuccess) el.classList.add('success');
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
 async function loadData() {
+  // Stage 1: 先讀 farmers.json 快速顯示
   try {
     const res = await fetch('data/farmers.json');
     farmers = await res.json();
   } catch (e) {
-    console.error('Failed to load farmer data:', e);
     farmers = [];
   }
   initFilters();
   initCategoryFilters();
   render();
   trackEvent('page_loaded', { farmer_count: farmers.length });
+
+  // Stage 2: 背景讀 Google Sheet API，更新後重新渲染
+  showToast('資料更新中...', false);
+  try {
+    const res = await fetch(SHEET_API);
+    if (res.ok) {
+      const sheetData = await res.json();
+      if (sheetData.length > 0) {
+        farmers = sheetData;
+        initFilters();
+        initCategoryFilters();
+        render();
+        showToast('✓ 已取得最新資料', true);
+      }
+    }
+  } catch (e) {
+    console.warn('Sheet API unavailable:', e.message);
+  }
 }
 
 function getRegions() {
@@ -231,7 +282,7 @@ function initCategoryFilters() {
 
   getCategories().forEach(c => {
     const btn = document.createElement('button');
-    btn.className = 'filter-btn';
+    btn.className = 'filter-btn cat-' + c;
     btn.textContent = c;
     btn.onclick = () => { activeCategory = c; render(); trackEvent('category_filter', { category: c }); };
     container.appendChild(btn);
@@ -285,10 +336,13 @@ function render() {
     const threadsUrl = f.url || `https://www.threads.com/${f.handle}`;
     const displayName = f.name ? `${f.name} ${f.handle}` : f.handle;
 
-    let certBadges = '';
+    let badges = '';
+    if (f.category) {
+      badges += `<span class="badge-cat cat-${f.category}">${f.category}</span>`;
+    }
     if (f.cert) {
       f.cert.split('、').forEach(c => {
-        certBadges += `<span class="badge-cert">${c.trim()}</span>`;
+        badges += `<span class="badge-cert">${c.trim()}</span>`;
       });
     }
 
@@ -298,7 +352,7 @@ function render() {
           <div class="card-name"><a href="${threadsUrl}" target="_blank" onclick="trackEvent('card_click',{handle:'${f.handle}',region:'${f.region}',product:'${f.product?.replace(/'/g,"")?.substring(0,30)}'})">${displayName}</a></div>
           ${f.region ? `<span class="card-region">${f.region}</span>` : ''}
         </div>
-        <div class="card-product">${f.product || '（品項待補充）'}${certBadges}</div>
+        <div class="card-product">${f.product || '（品項待補充）'}${badges}</div>
         <div class="card-details">
           ${f.price ? `<span>$ ${f.price}</span>` : ''}
           ${f.min ? `<span>最低 ${f.min}</span>` : ''}
