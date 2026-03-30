@@ -31,9 +31,12 @@
     .search-bar input { width: 100%; padding: 1rem 1.2rem; border: none; border-radius: 12px; font-size: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.12); outline: none; }
     .search-bar input::placeholder { color: #aaa; }
 
-    .filters { max-width: 700px; margin: 0 auto 1.5rem; padding: 0 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
-    .filter-btn { padding: 0.4rem 0.9rem; border: 1.5px solid #4a7c59; border-radius: 20px; background: white; color: #4a7c59; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
-    .filter-btn:hover, .filter-btn.active { background: #4a7c59; color: white; }
+    .filters { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.3rem; }
+    .filter-label { font-size: 0.8rem; color: #888; margin: 0.6rem 0 0.3rem; font-weight: 500; }
+    .filter-btn { padding: 0.35rem 0.8rem; border: 1.5px solid #ddd; border-radius: 20px; background: #f5f5f5; color: #666; font-size: 0.82rem; cursor: pointer; transition: all 0.2s; }
+    .filter-btn.all-btn { background: white; border-color: #4a7c59; color: #4a7c59; font-weight: 500; margin-bottom: 0.3rem; }
+    .filter-btn.active { background: #4a7c59; color: white; border-color: #4a7c59; }
+    .filter-btn:hover { opacity: 0.8; }
 
     .stats { max-width: 700px; margin: 0 auto 1rem; padding: 0 1rem; display: flex; gap: 1rem; flex-wrap: wrap; }
     .stat-card { background: white; border-radius: 10px; padding: 0.8rem 1.2rem; flex: 1; min-width: 100px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); text-align: center; }
@@ -130,8 +133,13 @@
     <input type="text" id="search" placeholder="搜尋品項、地區、農場名稱..." oninput="render()">
   </div>
 
-  <div class="filters" id="region-filters"></div>
-  <div class="filters" id="category-filters"></div>
+  <div style="max-width:700px;margin:0 auto;padding:0 1rem;">
+    <div class="filter-label">品類</div>
+    <div class="filters" id="category-filters"></div>
+    <div style="height:1px;background:#e0e0e0;margin:0.5rem 0;"></div>
+    <div class="filter-label">地區</div>
+    <div class="filters" id="region-filters"></div>
+  </div>
 
   <div class="stats">
     <div class="stat-card"><div class="num" id="stat-farmers">0</div><div class="label">小農</div></div>
@@ -195,8 +203,14 @@ function trackSearch(query, resultCount) {
 let farmers = [];
 let activeRegion = '';
 let activeCategory = '';
+const CATEGORY_ORDER = ['蔬菜','水果','米糧','蛋肉','海鮮','蜂蜜','調味','加工品'];
 function getCategories() {
-  return [...new Set(farmers.map(f => f.category).filter(c => c))].sort();
+  const cats = [...new Set(farmers.map(f => f.category).filter(c => c))];
+  return cats.sort((a, b) => {
+    const ia = CATEGORY_ORDER.indexOf(a);
+    const ib = CATEGORY_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
 }
 
 const SHEET_API = 'https://script.google.com/macros/s/AKfycbyh3jm4c_hkrIzIXnur7BEp5oAUzjm7kA17Yh00Qavbxnvf5UD77YgILJSct4Xae5U/exec';
@@ -248,16 +262,24 @@ function getRegions() {
   return regions.sort();
 }
 
+const REGION_ORDER = ['基隆','台北','新北','桃園','新竹','苗栗','台中','彰化','南投','雲林','嘉義','台南','高雄','屏東','台東','花蓮','宜蘭','澎湖','金門','馬祖'];
+
 function initFilters() {
   const container = document.getElementById('region-filters');
   container.innerHTML = '';
   const all = document.createElement('button');
-  all.className = 'filter-btn active';
-  all.textContent = '全部';
+  all.className = 'filter-btn all-btn active';
+  all.textContent = '全部地區';
   all.onclick = () => { activeRegion = ''; render(); trackEvent('region_filter', { region: '全部' }); };
   container.appendChild(all);
+  container.appendChild(document.createElement('br'));
 
-  getRegions().forEach(r => {
+  const regions = getRegions().sort((a, b) => {
+    const ia = REGION_ORDER.indexOf(a);
+    const ib = REGION_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
+  regions.forEach(r => {
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.textContent = r;
@@ -270,19 +292,19 @@ function initCategoryFilters() {
   const container = document.getElementById('category-filters');
   container.innerHTML = '';
 
-  // Only show if any farmer has category
   const hasCategories = farmers.some(f => f.category);
   if (!hasCategories) return;
 
   const all = document.createElement('button');
-  all.className = 'filter-btn active';
+  all.className = 'filter-btn all-btn active';
   all.textContent = '全部品類';
   all.onclick = () => { activeCategory = ''; render(); };
   container.appendChild(all);
+  container.appendChild(document.createElement('br'));
 
   getCategories().forEach(c => {
     const btn = document.createElement('button');
-    btn.className = 'filter-btn cat-' + c;
+    btn.className = 'filter-btn';
     btn.textContent = c;
     btn.onclick = () => { activeCategory = c; render(); trackEvent('category_filter', { category: c }); };
     container.appendChild(btn);
@@ -308,13 +330,15 @@ function render() {
   // Update filter button states
   document.querySelectorAll('#region-filters .filter-btn').forEach(btn => {
     btn.classList.toggle('active',
-      (btn.textContent === '全部' && !activeRegion) || btn.textContent === activeRegion
+      (btn.textContent === '全部地區' && !activeRegion) || btn.textContent === activeRegion
     );
   });
   document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
-    btn.classList.toggle('active',
-      (btn.textContent === '全部品類' && !activeCategory) || btn.textContent === activeCategory
-    );
+    const isActive = (btn.textContent === '全部品類' && !activeCategory) || btn.textContent === activeCategory;
+    btn.classList.toggle('active', isActive && btn.classList.contains('all-btn'));
+    // Category-specific color when selected
+    const cat = btn.textContent;
+    btn.classList.toggle('cat-' + cat, isActive && !btn.classList.contains('all-btn'));
   });
 
   // Stats
