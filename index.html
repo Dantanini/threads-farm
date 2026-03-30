@@ -110,6 +110,7 @@
   <div class="search-bar">
     <input type="text" id="search" placeholder="搜尋品項、地區、農場名稱..." oninput="render()">
   </div>
+  <div id="data-status" style="max-width:700px;margin:0 auto;padding:0 1rem;font-size:0.75rem;color:#888;text-align:right;height:1.2rem;"></div>
 
   <div class="filters" id="region-filters"></div>
   <div class="filters" id="category-filters"></div>
@@ -180,29 +181,44 @@ function getCategories() {
 
 const SHEET_API = 'https://script.google.com/macros/s/AKfycbyh3jm4c_hkrIzIXnur7BEp5oAUzjm7kA17Yh00Qavbxnvf5UD77YgILJSct4Xae5U/exec';
 
+function setStatus(msg) {
+  const el = document.getElementById('data-status');
+  if (el) el.textContent = msg;
+}
+
 async function loadData() {
-  // 優先讀 Google Sheet API，失敗則 fallback 到 farmers.json
+  // Stage 1: 先讀 farmers.json 快速顯示
   try {
-    const res = await fetch(SHEET_API);
-    if (res.ok) {
-      farmers = await res.json();
-    } else {
-      throw new Error('Sheet API failed');
-    }
+    const res = await fetch('data/farmers.json');
+    farmers = await res.json();
   } catch (e) {
-    console.warn('Sheet API unavailable, using fallback:', e.message);
-    try {
-      const res = await fetch('data/farmers.json');
-      farmers = await res.json();
-    } catch (e2) {
-      console.error('Fallback also failed:', e2);
-      farmers = [];
-    }
+    farmers = [];
   }
   initFilters();
   initCategoryFilters();
   render();
   trackEvent('page_loaded', { farmer_count: farmers.length });
+
+  // Stage 2: 背景讀 Google Sheet API，更新後重新渲染
+  setStatus('資料更新中...');
+  try {
+    const res = await fetch(SHEET_API);
+    if (res.ok) {
+      const sheetData = await res.json();
+      if (sheetData.length > 0) {
+        farmers = sheetData;
+        initFilters();
+        initCategoryFilters();
+        render();
+        setStatus('✓ 已取得最新資料');
+      }
+    }
+  } catch (e) {
+    console.warn('Sheet API unavailable:', e.message);
+    setStatus('');
+  }
+  // 3 秒後隱藏狀態
+  setTimeout(() => setStatus(''), 3000);
 }
 
 function getRegions() {
