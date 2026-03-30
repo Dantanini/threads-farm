@@ -203,8 +203,14 @@ function trackSearch(query, resultCount) {
 let farmers = [];
 let activeRegion = '';
 let activeCategory = '';
+const CATEGORY_ORDER = ['蔬菜','水果','米糧','蛋肉','海鮮','蜂蜜','調味','加工品'];
 function getCategories() {
-  return [...new Set(farmers.map(f => f.category).filter(c => c))].sort();
+  const cats = [...new Set(farmers.map(f => f.category).filter(c => c))];
+  return cats.sort((a, b) => {
+    const ia = CATEGORY_ORDER.indexOf(a);
+    const ib = CATEGORY_ORDER.indexOf(b);
+    return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+  });
 }
 
 const SHEET_API = 'https://script.google.com/macros/s/AKfycbyh3jm4c_hkrIzIXnur7BEp5oAUzjm7kA17Yh00Qavbxnvf5UD77YgILJSct4Xae5U/exec';
