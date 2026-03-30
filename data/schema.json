@@ -49,7 +49,7 @@
       },
       "category": {
         "type": "string",
-        "enum": ["", "蔬菜", "水果", "米糧", "蛋肉", "蜂蜜", "調味", "加工品"],
+        "enum": ["", "蔬菜", "水果", "米糧", "蛋肉", "蜂蜜", "調味", "加工品", "海鮮"],
         "description": "Product category for filtering"
       },
       "verified": {
