@@ -36,9 +36,12 @@ def main():
         if 'region' in farmer and farmer['region'] not in region_enum:
             errors.append(f'Row {i} ({farmer["handle"]}): invalid region "{farmer["region"]}"')
 
-        # Check category enum if present
-        if 'category' in farmer and farmer['category'] not in category_enum:
-            errors.append(f'Row {i} ({farmer["handle"]}): invalid category "{farmer["category"]}"')
+        # Check category enum if present (supports comma-separated)
+        if 'category' in farmer and farmer['category']:
+            for cat in farmer['category'].split(','):
+                cat = cat.strip()
+                if cat and cat not in category_enum:
+                    errors.append(f'Row {i} ({farmer["handle"]}): invalid category "{cat}"')
 
         # Check verified format if present
         if farmer.get('verified') and not re.match(r'^\d{4}-\d{2}-\d{2}$', farmer['verified']):
