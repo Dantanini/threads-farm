@@ -13,7 +13,7 @@ def main():
 
     # Get allowed values from schema
     region_enum = schema['items']['properties']['region']['enum']
-    category_enum = schema['items']['properties']['category']['enum']
+    category_enum = schema['items']['properties']['category'].get('enum', ['蔬菜','水果','米糧','蛋肉','蜂蜜','調味','加工品','海鮮'])
     required_fields = schema['items']['required']
     all_fields = set(schema['items']['properties'].keys())
 
@@ -36,9 +36,12 @@ def main():
         if 'region' in farmer and farmer['region'] not in region_enum:
             errors.append(f'Row {i} ({farmer["handle"]}): invalid region "{farmer["region"]}"')
 
-        # Check category enum if present
-        if 'category' in farmer and farmer['category'] not in category_enum:
-            errors.append(f'Row {i} ({farmer["handle"]}): invalid category "{farmer["category"]}"')
+        # Check category enum if present (supports comma-separated)
+        if 'category' in farmer and farmer['category']:
+            for cat in farmer['category'].split(','):
+                cat = cat.strip()
+                if cat and cat not in category_enum:
+                    errors.append(f'Row {i} ({farmer["handle"]}): invalid category "{cat}"')
 
         # Check verified format if present
         if farmer.get('verified') and not re.match(r'^\d{4}-\d{2}-\d{2}$', farmer['verified']):

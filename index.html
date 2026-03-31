@@ -98,7 +98,7 @@
 
     /* Category 品類按鈕顏色 */
     .cat-蔬菜 { background: #e8f5e9 !important; color: #2e7d32 !important; border-color: #a5d6a7 !important; }
-    .cat-水果 { background: #fff3e0 !important; color: #e65100 !important; border-color: #ffcc80 !important; }
+    .cat-水果 { background: #f1f8e9 !important; color: #558b2f !important; border-color: #aed581 !important; }
     .cat-米糧 { background: #efebe9 !important; color: #5d4037 !important; border-color: #bcaaa4 !important; }
     .cat-蛋肉 { background: #fce4ec !important; color: #c62828 !important; border-color: #f48fb1 !important; }
     .cat-海鮮 { background: #e3f2fd !important; color: #1565c0 !important; border-color: #90caf9 !important; }
@@ -205,7 +205,8 @@ let activeRegion = '';
 let activeCategory = '';
 const CATEGORY_ORDER = ['蔬菜','水果','米糧','蛋肉','海鮮','蜂蜜','調味','加工品'];
 function getCategories() {
-  const cats = [...new Set(farmers.map(f => f.category).filter(c => c))];
+  const all = farmers.flatMap(f => (f.category || '').split(',').map(c => c.trim()).filter(c => c));
+  const cats = [...new Set(all)];
   return cats.sort((a, b) => {
     const ia = CATEGORY_ORDER.indexOf(a);
     const ib = CATEGORY_ORDER.indexOf(b);
@@ -316,7 +317,7 @@ function render() {
 
   let filtered = farmers.filter(f => {
     if (activeRegion && f.region !== activeRegion) return false;
-    if (activeCategory && f.category !== activeCategory) return false;
+    if (activeCategory && !(f.category || '').split(',').map(c => c.trim()).includes(activeCategory)) return false;
     if (query) {
       const searchText = `${f.handle} ${f.name} ${f.product} ${f.region} ${f.price} ${f.cert}`.toLowerCase();
       return query.split(/\s+/).every(q => searchText.includes(q));
@@ -334,11 +335,10 @@ function render() {
     );
   });
   document.querySelectorAll('#category-filters .filter-btn').forEach(btn => {
-    const isActive = (btn.textContent === '全部品類' && !activeCategory) || btn.textContent === activeCategory;
-    btn.classList.toggle('active', isActive && btn.classList.contains('all-btn'));
-    // Category-specific color when selected
-    const cat = btn.textContent;
-    btn.classList.toggle('cat-' + cat, isActive && !btn.classList.contains('all-btn'));
+    const isAll = btn.classList.contains('all-btn');
+    const isActive = (isAll && !activeCategory) || btn.textContent === activeCategory;
+    btn.classList.toggle('active', isActive && isAll);
+    btn.classList.toggle('cat-' + btn.textContent, isActive && !isAll);
   });
 
   // Stats
@@ -362,7 +362,10 @@ function render() {
 
     let badges = '';
     if (f.category) {
-      badges += `<span class="badge-cat cat-${f.category}">${f.category}</span>`;
+      f.category.split(',').forEach(c => {
+        c = c.trim();
+        if (c) badges += `<span class="badge-cat cat-${c}">${c}</span>`;
+      });
     }
     if (f.cert) {
       f.cert.split('、').forEach(c => {
