@@ -13,7 +13,7 @@ def main():
 
     # Get allowed values from schema
     region_enum = schema['items']['properties']['region']['enum']
-    category_enum = schema['items']['properties']['category']['enum']
+    category_enum = schema['items']['properties']['category'].get('enum', ['蔬菜','水果','米糧','蛋肉','蜂蜜','調味','加工品','海鮮'])
     required_fields = schema['items']['required']
     all_fields = set(schema['items']['properties'].keys())
 
