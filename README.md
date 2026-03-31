@@ -71,7 +71,10 @@ Google Sheet「上線區」
 | Handle 重複檢查 | 防止同一帳號重複收錄 |
 | HTML 結構驗證 | 確認 fetch 路徑正確、UI 元素完整、無寫死 CATEGORIES |
 | 資料比對 Threads | 比對變動的小農品項是否與 Threads 頁面吻合（warning，不擋 merge） |
+| Fallback 邏輯驗證 | 確認 stale-while-revalidate 載入順序正確 |
 | 機敏資訊掃描 | 防止 token、密碼等意外上傳 |
+
+每日 03:00 TST 自動同步 Google Sheet → `farmers.json`（fallback 資料），有差異自動開 PR。
 
 上線流程使用 [Release Drafter](https://github.com/release-drafter/release-drafter) 自動從 PR 標題生成 release notes。
 
@@ -107,7 +110,7 @@ Google Sheet「上線區」
 
 | 欄位 | 說明 |
 |---|---|
-| `category` | 品類篩選用（蔬菜/水果/米糧/蛋肉/蜂蜜/調味/加工品/海鮮） |
+| `category` | 品類篩選用，支援多選逗號分隔（蔬菜/水果/米糧/蛋肉/蜂蜜/調味/加工品/海鮮） |
 | `url` | 覆蓋預設 Threads 連結（支援 FB、IG 等） |
 | `verified` | 資料確認日期，修改資料時清除 |
 | `created_at` | 首次上架日期 |
