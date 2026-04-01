@@ -43,6 +43,34 @@
         "type": "string",
         "description": "Shipping method"
       },
+      "address": {
+        "type": "string",
+        "description": "Farm address (for future map feature)"
+      },
+      "season": {
+        "type": "string",
+        "description": "Growing season (free text, e.g. 12-5月)"
+      },
+      "contact": {
+        "type": "string",
+        "description": "Contact info (LINE ID, phone, etc.)"
+      },
+      "order_url": {
+        "type": "string",
+        "description": "Order form or shop URL"
+      },
+      "cert_link": {
+        "type": "string",
+        "description": "Certification document link"
+      },
+      "intro": {
+        "type": "string",
+        "description": "Farm introduction (one line)"
+      },
+      "note": {
+        "type": "string",
+        "description": "Additional notes"
+      },
       "url": {
         "type": "string",
         "description": "Custom URL (overrides default Threads link)"
