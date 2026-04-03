@@ -37,6 +37,10 @@
 4. 確認沒有機敏資訊（token、password、secret、API key、bot token、chat ID、私人資料、個人暱稱）
 5. 有疑慮就停下來確認
 
+## 語言規範
+- commit message、PR title、PR description、issue 回覆一律用**繁體中文**
+- README 和 code comments 維持英文或中文皆可
+
 ## 公開內容規範
 - PR description、commit message、README 等公開內容不可提及面試、求職、作品集等私人動機
 - 不可包含個人暱稱、私人稱呼
