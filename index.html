@@ -193,9 +193,9 @@ function trackSearch(query, resultCount) {
   clearTimeout(searchTimer);
   searchTimer = setTimeout(() => {
     if (!query) return;
-    trackEvent('search_used', { query, result_count: resultCount });
+    trackEvent('search_used', { search_term: query, result_count: resultCount });
     if (resultCount === 0) {
-      trackEvent('search_no_result', { query });
+      trackEvent('search_no_result', { search_term: query });
     }
   }, 1000);
 }
