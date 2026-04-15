@@ -392,11 +392,12 @@ function render() {
         <div class="card-top">
           <div class="card-name"><a href="${threadsUrl}" target="_blank" onclick="trackEvent('card_click',{handle:'${f.handle}',region:'${f.region}',product:'${f.product?.replace(/'/g,"")?.substring(0,30)}'})">${displayName}</a></div>
         </div>
-        <div class="card-product">${f.region ? `<span class="card-region">${f.region}</span>` : ''}${f.product || '（品項待補充）'}${badges}</div>
+        <div class="card-product">${f.product || '（品項待補充）'}${badges}</div>
         <div class="card-details">
           ${f.price ? `<span>$ ${f.price}</span>` : ''}
           ${f.min ? `<span>最低 ${f.min}</span>` : ''}
           ${f.buy ? `<span>${f.buy}</span>` : ''}
+          ${f.region ? `<span class="card-region" style="margin-left:auto">${f.region}</span>` : ''}
         </div>
       </div>
     `;
