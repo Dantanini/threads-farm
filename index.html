@@ -57,6 +57,7 @@
     .card-details { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: #888; }
     .card-details span { display: flex; align-items: center; gap: 0.2rem; }
     .badge-cert { font-size: 0.7rem; background: #fff3e0; color: #e65100; padding: 0.1rem 0.4rem; border-radius: 8px; margin-left: 0.3rem; }
+    .badge-purchased { font-size: 0.65rem; background: #e8f5e9; color: #2e7d32; padding: 0.15rem 0.5rem; border-radius: 10px; font-weight: 500; white-space: nowrap; }
     .badge-warn { font-size: 0.7rem; background: #fce4ec; color: #c62828; padding: 0.1rem 0.4rem; border-radius: 8px; }
 
     .empty { text-align: center; padding: 3rem 1rem; color: #aaa; }
@@ -182,6 +183,11 @@
 
 <script>
 // ===== GA Event Tracking =====
+function isValidVerified(v) {
+  if (!v || typeof v !== 'string') return false;
+  return /^\d{4}-\d{2}-\d{2}$/.test(v.trim());
+}
+
 function trackEvent(name, params = {}) {
   if (typeof gtag === 'function') {
     gtag('event', name, params);
@@ -373,11 +379,13 @@ function render() {
       });
     }
 
+    const purchasedBadge = isValidVerified(f.verified) ? '<span class="badge-purchased">站長買過 ✓</span>' : '';
+
     return `
       <div class="card">
         <div class="card-top">
           <div class="card-name"><a href="${threadsUrl}" target="_blank" onclick="trackEvent('card_click',{handle:'${f.handle}',region:'${f.region}',product:'${f.product?.replace(/'/g,"")?.substring(0,30)}'})">${displayName}</a></div>
-          ${f.region ? `<span class="card-region">${f.region}</span>` : ''}
+          <div style="display:flex;gap:0.3rem;align-items:center">${purchasedBadge}${f.region ? `<span class="card-region">${f.region}</span>` : ''}</div>
         </div>
         <div class="card-product">${f.product || '（品項待補充）'}${badges}</div>
         <div class="card-details">

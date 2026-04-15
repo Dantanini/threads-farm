@@ -43,9 +43,11 @@ def main():
                 if cat and cat not in category_enum:
                     errors.append(f'Row {i} ({farmer["handle"]}): invalid category "{cat}"')
 
-        # Check verified format if present
-        if farmer.get('verified') and not re.match(r'^\d{4}-\d{2}-\d{2}$', farmer['verified']):
-            errors.append(f'Row {i} ({farmer["handle"]}): invalid verified date format "{farmer["verified"]}"')
+        # Check date format fields (verified, created_at, updated_at)
+        for date_field in ['verified', 'created_at', 'updated_at']:
+            val = farmer.get(date_field, '')
+            if val and not re.match(r'^\d{4}-\d{2}-\d{2}$', str(val)):
+                errors.append(f'Row {i} ({farmer["handle"]}): invalid {date_field} format "{val}" (expected YYYY-MM-DD)')
 
         # Check for unknown fields
         unknown = set(farmer.keys()) - all_fields
