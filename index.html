@@ -57,7 +57,10 @@
     .card-details { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.8rem; color: #888; }
     .card-details span { display: flex; align-items: center; gap: 0.2rem; }
     .badge-cert { font-size: 0.7rem; background: #fff3e0; color: #e65100; padding: 0.1rem 0.4rem; border-radius: 8px; margin-left: 0.3rem; }
-    .badge-purchased { font-size: 0.65rem; background: #e8f5e9; color: #2e7d32; padding: 0.15rem 0.5rem; border-radius: 10px; font-weight: 500; white-space: nowrap; }
+    .card { position: relative; overflow: hidden; }
+    .badge-purchased { position: absolute; top: 10px; right: -26px; background: #4a7c59; color: white; font-size: 0.58rem; font-weight: 600; padding: 0.2rem 2rem; transform: rotate(45deg); white-space: nowrap; box-shadow: 0 1px 3px rgba(0,0,0,0.15); z-index: 1; letter-spacing: 0.3px; }
+    @keyframes shimmy { 0%,100% { transform: rotate(45deg); } 15% { transform: rotate(45deg) translateX(-2px); } 30% { transform: rotate(45deg) translateX(2px); } 45% { transform: rotate(45deg) translateX(-1px); } 60% { transform: rotate(45deg); } }
+    .badge-purchased.animated { animation: shimmy 0.6s ease-in-out 1; }
     .badge-warn { font-size: 0.7rem; background: #fce4ec; color: #c62828; padding: 0.1rem 0.4rem; border-radius: 8px; }
 
     .empty { text-align: center; padding: 3rem 1rem; color: #aaa; }
@@ -383,9 +386,10 @@ function render() {
 
     return `
       <div class="card">
+        ${purchasedBadge}
         <div class="card-top">
           <div class="card-name"><a href="${threadsUrl}" target="_blank" onclick="trackEvent('card_click',{handle:'${f.handle}',region:'${f.region}',product:'${f.product?.replace(/'/g,"")?.substring(0,30)}'})">${displayName}</a></div>
-          <div style="display:flex;gap:0.3rem;align-items:center">${purchasedBadge}${f.region ? `<span class="card-region">${f.region}</span>` : ''}</div>
+          ${f.region ? `<span class="card-region">${f.region}</span>` : ''}
         </div>
         <div class="card-product">${f.product || '（品項待補充）'}${badges}</div>
         <div class="card-details">
@@ -396,6 +400,14 @@ function render() {
       </div>
     `;
   }).join('');
+
+  // Shimmy animation on first appearance
+  document.querySelectorAll('.badge-purchased').forEach(badge => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { badge.classList.add('animated'); observer.unobserve(badge); } });
+    }, { threshold: 0.5 });
+    observer.observe(badge);
+  });
 }
 
 // 頁面切換
