@@ -892,7 +892,7 @@
     "note": "",
     "url": "",
     "category": "蔬菜",
-    "verified": "2026-04-15",
+    "verified": "2026-04-27",
     "created_at": "2026-03-29",
     "updated_at": "2026-04-15"
   },
@@ -1398,7 +1398,7 @@
     "note": "",
     "url": "",
     "category": "蔬菜",
-    "verified": "2026-04-15",
+    "verified": "2026-04-27",
     "created_at": "2026-03-29",
     "updated_at": "2026-04-15"
   },
@@ -1451,7 +1451,7 @@
   {
     "handle": "@xushengfu",
     "name": "一日一甘",
-    "region": "",
+    "region": "台中",
     "product": "油甘鮮果粉",
     "price": "單入$450 / 六入$2250",
     "address": "",
@@ -1469,12 +1469,12 @@
     "category": "加工品",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@pro_bro_avocado",
     "name": "波波酪梨",
-    "region": "",
+    "region": "南投",
     "product": "酪梨",
     "price": "待產季",
     "address": "",
@@ -1492,12 +1492,12 @@
     "category": "水果",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@hugarlic",
     "name": "",
-    "region": "",
+    "region": "雲林",
     "product": "蒜頭",
     "price": "",
     "address": "",
@@ -1515,12 +1515,12 @@
     "category": "蔬菜",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@tenyi_soysause1960",
     "name": "",
-    "region": "",
+    "region": "台南",
     "product": "手工醬油",
     "price": "",
     "address": "",
@@ -1538,12 +1538,12 @@
     "category": "調味",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@peak_view2025",
     "name": "",
-    "region": "",
+    "region": "台中",
     "product": "香菇",
     "price": "",
     "address": "",
@@ -1561,12 +1561,12 @@
     "category": "蔬菜",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@helen7533967",
     "name": "",
-    "region": "",
+    "region": "台中",
     "product": "娃娃菜",
     "price": "",
     "address": "",
@@ -1584,12 +1584,12 @@
     "category": "蔬菜",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@0amber123",
     "name": "",
-    "region": "",
+    "region": "雲林",
     "product": "葉菜（白菜、油菜、青江、菠菜等）",
     "price": "",
     "address": "",
@@ -1607,12 +1607,12 @@
     "category": "蔬菜",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@_berryhills",
     "name": "",
-    "region": "",
+    "region": "苗栗",
     "product": "草莓",
     "price": "",
     "address": "",
@@ -1630,12 +1630,12 @@
     "category": "水果",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@chuchutwotwo",
     "name": "",
-    "region": "",
+    "region": "高雄",
     "product": "玉荷苞荔枝",
     "price": "",
     "address": "",
@@ -1653,12 +1653,12 @@
     "category": "水果",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@jcfruit.tw",
     "name": "",
-    "region": "",
+    "region": "高雄",
     "product": "黃檸檬（5月後產季）",
     "price": "",
     "address": "",
@@ -1676,7 +1676,7 @@
     "category": "水果",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@erica_tsai_",
@@ -1727,7 +1727,7 @@
   {
     "handle": "@sunny19941219",
     "name": "",
-    "region": "",
+    "region": "屏東",
     "product": "百香果（都香3號 / 台農1號）",
     "price": "$350-$1500/箱，全台免運",
     "address": "",
@@ -1745,7 +1745,7 @@
     "category": "水果",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@fuji_tayal",
@@ -2021,7 +2021,7 @@
     "category": "米糧",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@sarly317",
@@ -2140,18 +2140,18 @@
   },
   {
     "handle": "@xiu_o87o",
-    "name": "",
+    "name": "社頭芭樂小妹",
     "region": "彰化",
-    "product": "芭樂",
-    "price": "",
-    "address": "",
-    "season": "",
-    "min": "",
-    "ship": "",
-    "buy": "私訊",
-    "contact": "",
+    "product": "珍珠芭樂、香水芭樂、水晶芭樂、紅心芭樂、水蜜芭樂",
+    "price": "10斤 $368含運（郵局寄送）",
+    "address": "彰化縣社頭鄉潘厝橫巷3-20號",
+    "season": "全年供應",
+    "min": "一箱10斤",
+    "ship": "宅配, 郵局寄送",
+    "buy": "私訊或官方line。@596yztmr",
+    "contact": "官方line。@596yztmr",
     "order_url": "",
-    "cert": "",
+    "cert": "產銷履歷",
     "cert_link": "",
     "intro": "",
     "note": "",
@@ -2159,7 +2159,7 @@
     "category": "水果",
     "verified": "",
     "created_at": "2026-03-29",
-    "updated_at": "2026-04-15"
+    "updated_at": "2026-04-27"
   },
   {
     "handle": "@asiaplants1992",
@@ -2456,8 +2456,77 @@
     "note": "",
     "url": "",
     "category": "蔬菜",
-    "verified": "2026-04-15",
+    "verified": "2026-04-27",
     "created_at": "2026-04-15",
     "updated_at": "2026-04-15"
+  },
+  {
+    "handle": "@pin_sen_qiao",
+    "name": "品森鱻",
+    "region": "屏東",
+    "product": "龍膽石斑全魚利用、也可以客製化，幾乎沒有沙腸的白蝦、龍虎斑、紅雞母、午仔魚",
+    "price": "黑貓5000含運、賣貨便2000含運",
+    "address": "",
+    "season": "幾乎全年",
+    "min": "零售一台斤、半台斤也可，也有批發",
+    "ship": "宅配, 賣貨便, 自取",
+    "buy": "賣貨便、官方line、臉書",
+    "contact": "官方line@040imhia、ig:pin_sen_qiao",
+    "order_url": "https://myship.7-11.com.tw/general/detail/GM2311297464685?fbclid=IwdGRjcAM4nspjbGNrAziexmV4dG4DYWVtAjExAAEeZSfr3SEfhTrscjlZTbTfj8W7TplMSahZfvmYnjg-XilVJMxJXOnPxtOnmXM_aem_789RqZKmLF6HKMB9aTQL9Q",
+    "cert": "有機, 產銷履歷",
+    "cert_link": "我們是全魚利用的龍膽石斑魚品牌",
+    "intro": "我們是品森鱻\n一個全魚利用的龍膽石斑魚品牌🐟\n100%台灣製造\n有魚有蝦還有飯後甜點！\n\n魚鱗-做成魚鱗凍\n魚骨-熬成魚高湯\n魚肉-輪切、清肉、火鍋肉片、切塊\n魚下巴-整塊、切塊\n魚頭-切塊\n\n回應SDG12\n讓您整尾龍膽石斑都吃得到！\n龍膽石斑商品唯獨魚鱗凍是微微黑糖甜味\n可以拆開即飲的也不會腥😋\n\n我們還有外面買不到的\n幾乎吃不到沙腸的白蝦\n就是因為老闆不想吃到沙腸\n所以上岸後再養一陣子\n讓沙腸排掉才真空急速冷凍！\n\n如果你想吃的健康吃到營養吃的特別\n歡迎私訊我們",
+    "note": "",
+    "url": "",
+    "category": "海鮮",
+    "verified": "",
+    "created_at": "2026-04-27",
+    "updated_at": "2026-04-27"
+  },
+  {
+    "handle": "@p789426",
+    "name": "微醺農場",
+    "region": "雲林",
+    "product": "全溫室生產，產銷履歷小黃瓜、產銷履歷牛番茄、玉女小番茄",
+    "price": "時價",
+    "address": "雲林縣水林鄉灣西村後湖7-11號",
+    "season": "小黃瓜全年供應，牛番茄、玉女小番茄(12-4月供應)",
+    "min": "依規格，最低3斤起寄",
+    "ship": "宅配, 超商取貨, 自取",
+    "buy": "私訊、LINE、蝦皮賣場",
+    "contact": "LINE ID:p789426",
+    "order_url": "https://shopee.tw/shop/16150142",
+    "cert": "產銷履歷",
+    "cert_link": "青農返鄉，以科技、純樸的行動力，改善家鄉的產業經濟。",
+    "intro": "青年返鄉投入農業，為家鄉注入活力與生氣，建立溫室產業聚落及以永續農業為目標。採用目前最先進溫室設施栽培，溫室設施的保護能有效減少大多數病蟲害，通過蔬果產銷履歷認證，並持續精進栽培管理模式，輔以益生菌讓植株自然強健，增加植株抗病能力，以達到最低防治為目的，專業青農用心栽種，帶給大家吃得安心，健康安全的生鮮蔬果！ 青農爸爸創立金龍水產養殖場已40年，專養外銷日本鰻魚，每一季鰻魚收貨前皆送認證實驗室，確保藥檢合格，看著一池一池鰻魚從小苗孕育而成大鰻，是青農爸爸最欣慰的成就感!!!!  獲獎經歷 1. 114年 中華民國全國青年獎章 2. 113年 雲林縣十大菁英農民(雲林縣政府) 3. 112年 2023智慧城市創新應用獎 4. 112年 國家永續發展獎(一般企業組) 5. 110年 獲選為2021未來大人物 (關鍵評論網媒體集團) 6. 110年 產銷履歷達人(農業部) 7. 109年 創業歸故里冠軍(經濟部) 8. 108-111年 模範農民(水林鄉農會)",
+    "note": "",
+    "url": "",
+    "category": "蔬菜",
+    "verified": "",
+    "created_at": "2026-04-27",
+    "updated_at": "2026-04-27"
+  },
+  {
+    "handle": "@97going",
+    "name": "果隱白沙",
+    "region": "台南",
+    "product": "芒果、火龍果、芭樂、百香果、金針花、燈籠果（酸漿）、酪梨、棗子",
+    "price": "私訊",
+    "address": "台南市後壁區白沙屯",
+    "season": "依農產品產季",
+    "min": "無",
+    "ship": "宅配, 超商取貨, 賣貨便, 自取, 郵局寄送",
+    "buy": "私訊",
+    "contact": "0972879696 李先生",
+    "order_url": "",
+    "cert": "自然農法, 無農藥",
+    "cert_link": "位於台南後壁區白沙屯，「果隱白沙」是一座隱身於廣袤稻田間的家族果園。因為被稻浪溫柔包圍，我們得以在最純粹、自然的環境中，培育出最真實的在地滋味。",
+    "intro": "",
+    "note": "",
+    "url": "",
+    "category": "水果",
+    "verified": "",
+    "created_at": "2026-04-27",
+    "updated_at": "2026-04-27"
   }
 ]
